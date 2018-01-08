@@ -1,0 +1,105 @@
+adiantamentos
+
+beneficiario
+valor recebido
+data do recebimento
+ordem bancária
+material consumo
+serviços de terceiros PF
+serviços de terceiros PJ
+data da prestação de contas
+
+
+diarias
+
+(colocar matricula, grupo (I,II,III,IV) e nível(lista suspensa na folha) em servidores)
+(grupos 
+
+
+beneficiario lista de servidores (botao para cadastrar novo diferente do existente)
+destino
+meio de transporte (select aereo ou terrestre)
+objetivo da viagem caixa aberta
+data do inicio da viagem
+numero de diarias (numero)
+tipo de diaria lista suspensa (a, b1, b2, b3, c)
+valor pago 
+numero da portaria caixa aberta
+data da publicacao da diaria
+
+
+contratos
+
+contratado (nome da empresa)
+CNPJ (mascara) se nao tiver cadastrado na tabela de empresas, cadastre
+orgao
+ug do orgao (precisa cadastrar na tabela de orgaos)
+gestor do contrato (nome do gestor)
+objeto do contrato
+modalidade do contrato (pregão, inegibilidade, dispensa por licitação...) caixa select
+numero do processo administrativo
+vinculação 
+data da assinatura do contrato
+data de inicio do contrato
+data de publicacao do contrato
+data de termino do contrato
+numero do contrato (tem barra tem traço)
+numero do contrato no SIAFI
+valor global 
+valor empenhado
+valor liquidado
+valor pago ate o momento
+diferença (global - pago)
+contrato é prorrogavel? sim ou nao (1 ou 0)
+termo aditivo (numero int)
+
+
+convenios 
+
+informacoes
+
+convenio, contrato de repasse ou termo de compromisso (lista)
+concedente (caixa aberta) 
+convenente (lista orgao)
+fecoep lista de sim ou nao
+objeto do convenio caixa aberta
+
+vigencia
+
+data de inicio
+data de termino
+
+identificacao
+
+numero do siafe caixa aberta 
+numero do siconv caixa aberta
+numero do siafi caixa aberta
+
+
+partida 
+
+valor total
+valor liberado
+porcentagem liberado/total
+
+contrapartida
+
+valor total
+valor liberado
+porcentagem liberado/total
+
+convenio (é a partida + contrapartida) - o sistema que faz
+
+valor total
+valor liberado
+porcentagem liberado/total
+
+aditivo
+
+valor
+prazo 
+
+
+data da ultima liberação
+prorrogacao (data)
+data da prestacao de conta
