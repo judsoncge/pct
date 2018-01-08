@@ -1,11 +1,11 @@
 <?php
 //conecta-se com o banco de dados
 //servidor para conexão com o banco de dados
-$servidor_banco = 'localhost';
+$servidor_banco = '10.50.119.149';
 //usuario para conexão com o banco de dados
-$usuario_banco = 'root'; 
+$usuario_banco = 'desenvolvedor'; 
 //senha para conexão com o banco de dados           
-$senha_banco = '';       
+$senha_banco = 'cgeagt';       
 //nome do banco de dados         
 $nome_banco = 'pct';  
 
