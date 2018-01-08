@@ -54,9 +54,9 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Valor de contrapartida liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
 							<b>Porcentagem de contrapartida liberado/total</b>:          <?php echo number_format(($informacoes["VL_CONTRAPARTIDA_LIBERADO"]/$informacoes["VL_CONTRAPARTIDA_TOTAL"])*100,1,".","") . "%" ?><br>
 							<br>
-							<b>Valor total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"],2, ",", ".") ?><br>
+							<b>Valor total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"],2, ",", ".")+$informacoes["VL_ADITIVO"],2, ",", ".") ?><br>
 							<b>Valor total liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
-							<b>Porcentagem do total liberado/total</b>:          <?php echo number_format((($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"])/($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"]))*100,1,".","") . "%" ?><br>
+							<b>Porcentagem liberado/total</b>:          <?php echo number_format((($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"])/($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"])+$informacoes["VL_ADITIVO"])*100,1,".","") . "%" ?><br>
 							<br>
 							<b>Valor aditivo</b>:             <?php echo "R$ " . number_format($informacoes["VL_ADITIVO"],2, ",", ".") ?><br>
 							<b>Prazo de aditivo</b>:          <?php echo date_format(new DateTime($informacoes["DT_PRAZO_ADITIVO"]), 'd/m/Y') ?>
