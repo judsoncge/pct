@@ -145,7 +145,7 @@ function retira_caracteres_especiais($string){
 
 function retorna_dados_componente($tabela, $ordem, $conexao_com_banco){
 		
-	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM $tabela ORDER BY $ordem");
+	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM $tabela WHERE NM_STATUS='ATIVO' ORDER BY $ordem");
 	
 	return $resultado;
 	
