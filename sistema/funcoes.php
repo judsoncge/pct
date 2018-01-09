@@ -309,6 +309,14 @@ function retorna_servidores_orgao($id, $conexao_com_banco){
 	return $resultado;
 	
 }
+
+function retorna_servidores_orgao_nao_bolsista($id, $conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM tb_servidores WHERE ID_ORGAO='$id' and NM_CONDICAO!='BOLSISTA' order by NM_SERVIDOR");
+	
+	return $resultado;
+	
+}
 	
 function retorna_orgao_servidor($id, $conexao_com_banco){
 	

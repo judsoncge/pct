@@ -47,9 +47,16 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Gestor do contrato</label>
-										<input class="form-control" id="gestor" name="gestor" placeholder="Digite o gestor" type="text" maxlength="255" value="<?php echo $informacoes["NM_GESTOR"] ?>" required />				  
-									</div>				
+										<label class="control-label" for="exampleInputEmail1">Gestor do Contrato</label>
+										<a href="../servidores/cadastrar2.php">cadastrar novo</a>
+										<select class="form-control" id="gestor" name="gestor" required />
+											<option value="<?php $informacoes["ID_SERVIDOR_GESTOR"]?>"><?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_GESTOR"], $conexao_com_banco)?></option>
+											<?php $lista = retorna_servidores_orgao_nao_bolsista($_SESSION["orgao"], $conexao_com_banco);
+											while($r = mysqli_fetch_object($lista)){ ?>
+												<option value="<?php echo $r->ID ?>"><?php echo $r->NM_SERVIDOR ?></option>
+											<?php } ?>
+										</select>
+									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">

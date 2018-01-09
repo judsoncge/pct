@@ -32,7 +32,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>CNPJ</b>:                 <?php echo retorna_cnpj_empresa($informacoes["ID_EMPRESA"], $conexao_com_banco) ?><br>
 							<b>Órgão</b>:                   <?php echo retorna_nome_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?> - <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?> <br>
 							<b>UG</b>:                      <?php echo retorna_ug_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?><br>
-							<b>Gestor do contrato</b>:      <?php echo $informacoes["NM_GESTOR"] ?><br>
+							<b>Gestor do contrato</b>:      <?php echo retorna_nome_servidor($informacoes["NM_GESTOR"], $conexao_com_banco) ?><br>
 							<b>Objeto do contrato</b>:      <?php echo $informacoes["NM_OBJETO"] ?><br>
 							<b>Modalidade</b>:              <?php echo $informacoes["NM_MODALIDADE"] ?><br>
 							<b>Processo administrativo</b>: <?php echo $informacoes["NM_PROCESSO"] ?><br>
