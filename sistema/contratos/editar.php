@@ -71,8 +71,15 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<label class="control-label" for="exampleInputEmail1">Modalidade</label>
 										<select class="form-control" id="modalidade" name="modalidade" required/>
 											<option value="<?php echo $informacoes["NM_MODALIDADE"] ?>"><?php echo $informacoes["NM_MODALIDADE"] ?></option>
+											<option value="CONCORRÊNCIA">CONCORRÊNCIA</option>
+											<option value="CONVITE">CONVITE</option>
+											<option value="DISPENSA DE LICITAÇÃO">DISPENSA DE LICITAÇÃO</option>
+											<option value="DISPENSA DE LICITAÇÃO EM RAZÃO DA EMERGÊNCIA">DISPENSA DE LICITAÇÃO EM RAZÃO DA EMERGÊNCIA</option>
+											<option value="DISPENSA DE LICITAÇÃO EM RAZÃO DO VALOR">DISPENSA DE LICITAÇÃO EM RAZÃO DO VALOR</option>
+											<option value="INEXIBILIDADE DE LICITAÇÃO">INEXIBILIDADE DE LICITAÇÃO</option>
 											<option value="PREGÃO">PREGÃO</option>
-											<option value="DISPENSA POR LICITAÇÃO">DISPENSA POR LICITAÇÃO</option>
+											<option value="REGIME DIFERENCIADO DE LICITAÇÃO">REGIME DIFERENCIADO DE LICITAÇÃO</option>
+											<option value="TOMADA DE PREÇOS">TOMADA DE PREÇOS</option>
 										</select>
 									</div> 
 								</div>
