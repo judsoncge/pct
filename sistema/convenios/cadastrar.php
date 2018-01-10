@@ -35,13 +35,8 @@ include("../includes/verificacao-permissao.php");
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Convenente</label>
-										<select class="form-control" id="orgao" name="orgao" required/>
-											<option value="">Selecione o órgão</option>
-											<?php $lista = retorna_orgaos($conexao_com_banco);
-											while($r = mysqli_fetch_object($lista)){ ?>
-											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_ORGAO ?></option><?php } ?>
-										</select>
-									</div> 
+										<input class="form-control" id="convenente" name="convenente" placeholder="Digite o convenente" type="text" maxlength="255" required/>				  
+									</div>				
 								</div>
 							</div>
 							<div class="row">
@@ -62,6 +57,7 @@ include("../includes/verificacao-permissao.php");
 									</div>				
 								</div>
 							</div>
+							<strong><h4>Vigência</h4></strong>
 							<hr>
 							<div class="row">
 								<div class="col-md-6">
@@ -77,24 +73,25 @@ include("../includes/verificacao-permissao.php");
 									</div>				
 								</div>
 							</div>
+							<strong><h4>Identificação</h4></strong>
 							<hr>
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número do SIAFE</label>
-										<input class="form-control" id="numero_siafe" name="numero_siafe" type="text" maxlength="255" required/>
+										<input class="form-control" id="numero_siafe" name="numero_siafe" type="text" maxlength="255" />
 									</div> 
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número do SICONV</label>
-										<input class="form-control" id="numero_siconv" name="numero_siconv" type="text" maxlength="255" required/>
+										<input class="form-control" id="numero_siconv" name="numero_siconv" type="text" maxlength="255" />
 									</div> 
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número do SIAFI</label>
-										<input class="form-control" id="numero_siafi" name="numero_siafi" type="text" maxlength="255" required/>
+										<input class="form-control" id="numero_siafi" name="numero_siafi" type="text" maxlength="255" />
 									</div> 
 								</div>
 							</div>
@@ -128,16 +125,16 @@ include("../includes/verificacao-permissao.php");
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Valor de aditivo</label>
-										<input class="form-control" id="valor_aditivo" name="valor_aditivo" type="number" step="0.01" required />	  
+										<label class="control-label" for="exampleInputEmail1">Valor de aditivo Partida</label>
+										<input class="form-control" id="valor_aditivo_partida" name="valor_aditivo_partida" type="number" step="0.01" />	  
 									</div> 
-								</div>
+								</div>								
 								<div class="col-md-6">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Prazo do aditivo</label>
-										<input class="form-control" id="prazo_aditivo" name="prazo_aditivo" type="date" />	  
+										<label class="control-label" for="exampleInputEmail1">Valor de aditivo Contrapartida</label>
+										<input class="form-control" id="valor_aditivo_contrapartida" name="valor_aditivo_contrapartida" type="number" step="0.01" />	  
 									</div> 
-								</div>
+								</div>								
 							</div>
 							<hr>
 							<div class="row">
@@ -155,7 +152,7 @@ include("../includes/verificacao-permissao.php");
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de prestação de contas</label>
+										<label class="control-label" for="exampleInputEmail1">Data da última prestação de contas</label>
 										<input class="form-control" id="data_prestacao_contas" name="data_prestacao_contas" type="date"/>	  
 									</div> 
 								</div>

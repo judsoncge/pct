@@ -80,7 +80,7 @@ $p = retorna_permissao_servidor($_SESSION["id"], "GERENCIAR_CONVENIOS", $conexao
 									</td>
 									<td>
 										<center>
-											<?php echo retorna_sigla_orgao($r->ID_ORGAO, $conexao_com_banco) ?>
+											<?php echo $r->NM_CONVENENTE ?>
 										</center>
 									</td>
 									<td>

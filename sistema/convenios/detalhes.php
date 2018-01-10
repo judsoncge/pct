@@ -11,8 +11,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 <!-- Conteúdo da Página -->
 <div id="page-content-wrapper">
 	<div class="container titulo-pagina">				
-		<p>Convênio de <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?>  
-		com <?php echo $informacoes["NM_CONCEDENTE"] ?></p>		
+		<p>Convênio de <?php echo $informacoes["NM_CONVENENTE"] ?> com <?php echo $informacoes["NM_CONCEDENTE"] ?></p>		
 	</div>
 	
 	<div class="container caixa-conteudo">
@@ -29,7 +28,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<hr>
 							<b>Tipo</b>:                 <?php echo $informacoes["NM_TIPO"] ?><br>
 							<b>Concedente</b>:           <?php echo $informacoes["NM_CONCEDENTE"] ?><br>
-							<b>Convenente</b>:           <?php echo retorna_nome_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?> - <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?> <br>
+							<b>Convenente</b>:           <?php echo $informacoes["NM_CONVENENTE"]?> <br>
 							<b>FECOEP?</b> <?php if($informacoes["BL_FECOEP"]){echo "Sim";}else{echo "Não";} ?><br>
 							<b>Objeto do convênio</b>:      <?php echo $informacoes["NM_OBJETO"] ?><br>
 							<hr>
@@ -54,13 +53,12 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Valor de contrapartida liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
 							<b>Porcentagem de contrapartida liberado/total</b>:          <?php echo number_format(($informacoes["VL_CONTRAPARTIDA_LIBERADO"]/$informacoes["VL_CONTRAPARTIDA_TOTAL"])*100,1,".","") . "%" ?><br>
 							<br>
-							<b>Valor total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"],2, ",", ".")+$informacoes["VL_ADITIVO"],2, ",", ".") ?><br>
+							<b>Valor total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"]+$informacoes["VL_ADITIVO_PARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"],2, ",", ".") ?><br>
 							<b>Valor total liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
-							<b>Porcentagem liberado/total</b>:          <?php echo number_format((($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"])/($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"])+$informacoes["VL_ADITIVO"])*100,1,".","") . "%" ?><br>
+							<b>Porcentagem liberado/total</b>:          <?php echo number_format((($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"])/($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"]+$informacoes["VL_ADITIVO_PARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"]))*100,1,".","") . "%" ?><br>
 							<br>
-							<b>Valor aditivo</b>:             <?php echo "R$ " . number_format($informacoes["VL_ADITIVO"],2, ",", ".") ?><br>
-							<b>Prazo de aditivo</b>:          <?php echo date_format(new DateTime($informacoes["DT_PRAZO_ADITIVO"]), 'd/m/Y') ?>
-							<br>
+							<b>Valor aditivo de partida</b>:             <?php echo "R$ " . number_format($informacoes["VL_ADITIVO_PARTIDA"],2, ",", ".") ?><br>
+							<b>Valor aditivo de contrapartida</b>:             <?php echo "R$ " . number_format($informacoes["VL_ADITIVO_CONTRAPARTIDA"],2, ",", ".") ?><br>
 							<hr>
 							<h2>OUTRAS INFORMAÇÕES</h2>
 							<hr>

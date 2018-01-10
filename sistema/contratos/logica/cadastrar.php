@@ -28,7 +28,7 @@ $data_inicio = $_POST["data_inicio"];
 
 $data_termino = $_POST["data_termino"];
 
-$m = validar_vigencia($data_assinatura, $data_publicacao, $data_inicio, $data_termino);
+$m = validar_vigencia_contrato($data_assinatura, $data_publicacao, $data_inicio, $data_termino);
 
 if($m!=""){
 	echo "<script>alert('$m')</script>";
