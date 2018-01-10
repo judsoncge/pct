@@ -50,7 +50,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<label class="control-label" for="exampleInputEmail1">Gestor do Contrato</label>
 										<a href="../servidores/cadastrar2.php">cadastrar novo</a>
 										<select class="form-control" id="gestor" name="gestor" required />
-											<option value="<?php $informacoes["ID_SERVIDOR_GESTOR"]?>"><?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_GESTOR"], $conexao_com_banco)?></option>
+											<option value="<?php echo $informacoes["ID_SERVIDOR_GESTOR"]?>"><?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_GESTOR"], $conexao_com_banco)?></option>
 											<?php $lista = retorna_servidores_orgao_nao_bolsista($_SESSION["orgao"], $conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>
 												<option value="<?php echo $r->ID ?>"><?php echo $r->NM_SERVIDOR ?></option>
@@ -134,7 +134,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número do contrato no SIAFI</label>
-										<input class="form-control" id="numero_contrato_siafi" name="numero_contrato_siafi" placeholder="Complete com zeros os espaços vazios" type="text" maxlength="255" value="<?php echo $informacoes["NM_NUMERO_CONTRATO_SIAFI"] ?>" required />
+										<input class="form-control" id="numero_contrato_siafi" name="numero_contrato_siafi" placeholder="Complete com zeros os espaços vazios" type="text" maxlength="255" value="<?php echo $informacoes["NM_NUMERO_CONTRATO_SIAFI"] ?>" />
 									</div> 
 								</div>
 							</div>

@@ -3,8 +3,8 @@ jQuery(function($){
 	$("#CPF").mask("999.999.999-99");				
 	$("#CNPJ").mask("99.999.999/9999-99");				
 	$("#telefone").mask("99999-9999");								
-	$("#numero_contrato").mask("999/9999");				
-	$("#numero_contrato_siafi").mask("999/9999");
+	$("#numero_contrato").mask("999999999/9999");				
+	$("#numero_contrato_siafi").mask("999999999/9999");
 	$("#placa").mask("aaa-9999");
 	$("#ano_veiculo").mask("9999/9999");	
 });

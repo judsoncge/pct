@@ -91,6 +91,7 @@ include("../includes/verificacao-permissao.php");
 									</div> 
 								</div>
 							</div>
+							<strong><h4>Vigência</h4></strong>
 							<hr>
 							<div class="row">
 								<div class="col-md-3">
@@ -122,14 +123,14 @@ include("../includes/verificacao-permissao.php");
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Número do contrato</label>
+										<label class="control-label" for="exampleInputEmail1">Número do contrato (complete com zeros os espaços vazios na frente)</label>
 										<input class="form-control" id="numero_contrato" name="numero_contrato" placeholder="Complete com zeros os espaços vazios" type="text" maxlength="255" required />
 									</div> 
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Número do contrato no SIAFI</label>
-										<input class="form-control" id="numero_contrato_siafi" name="numero_contrato_siafi" placeholder="Complete com zeros os espaços vazios" type="text" maxlength="255" required />
+										<label class="control-label" for="exampleInputEmail1">Número do contrato no SIAFI (complete com zeros os espaços vazios na frente)</label>
+										<input class="form-control" id="numero_contrato_siafi" name="numero_contrato_siafi" placeholder="Complete com zeros os espaços vazios" type="text" maxlength="255" />
 									</div> 
 								</div>
 							</div>
