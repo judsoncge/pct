@@ -32,7 +32,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>CNPJ</b>:                 <?php echo retorna_cnpj_empresa($informacoes["ID_EMPRESA"], $conexao_com_banco) ?><br>
 							<b>Órgão</b>:                   <?php echo retorna_nome_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?> - <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?> <br>
 							<b>UG</b>:                      <?php echo retorna_ug_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?><br>
-							<b>Gestor do contrato</b>:      <?php echo retorna_nome_servidor($informacoes["NM_GESTOR"], $conexao_com_banco) ?><br>
+							<b>Gestor do contrato</b>:      <?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_GESTOR"], $conexao_com_banco) ?><br>
 							<b>Objeto do contrato</b>:      <?php echo $informacoes["NM_OBJETO"] ?><br>
 							<b>Modalidade</b>:              <?php echo $informacoes["NM_MODALIDADE"] ?><br>
 							<b>Processo administrativo</b>: <?php echo $informacoes["NM_PROCESSO"] ?><br>
@@ -41,8 +41,8 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<h2>VIGÊNCIA</h2>
 							<hr>
 							<b>Data de assinatura</b>:      <?php echo date_format(new DateTime($informacoes["DT_ASSINATURA"]), 'd/m/Y') ?><br>
-							<b>Data de início</b>:          <?php echo date_format(new DateTime($informacoes["DT_INICIO"]), 'd/m/Y') ?><br>
 							<b>Data de publicação</b>:      <?php echo date_format(new DateTime($informacoes["DT_PUBLICACAO"]), 'd/m/Y') ?><br>
+							<b>Data de início</b>:          <?php echo date_format(new DateTime($informacoes["DT_INICIO"]), 'd/m/Y') ?><br>
 							<b>Data de término</b>:         <?php echo date_format(new DateTime($informacoes["DT_TERMINO"]), 'd/m/Y') ?><br>
 							<hr>
 							<h2>IDENTIFICAÇÃO</h2>

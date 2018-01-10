@@ -106,15 +106,15 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de início</label>
-										<input class="form-control" id="data_inicio" name="data_inicio" type="date" value="<?php echo $informacoes["DT_INICIO"] ?>" required />	  
-									</div> 
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de publicação</label>
 										<input class="form-control" id="data_publicacao" name="data_publicacao" type="date" value="<?php echo $informacoes["DT_PUBLICACAO"] ?>" required />	  
 									</div>				
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de início</label>
+										<input class="form-control" id="data_inicio" name="data_inicio" type="date" value="<?php echo $informacoes["DT_INICIO"] ?>" required />	  
+									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">

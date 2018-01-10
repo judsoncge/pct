@@ -409,6 +409,40 @@ function retorna_numero_contratos_orgao($id_orgao, $conexao_com_banco){
 	
 }
 
+function validar_vigencia_contrato($data_assinatura, $data_publicacao, $data_inicio, $data_termino){
+		
+	$mensagem = "";	
+		
+	if($data_assinatura > $data_publicacao){
+		$mensagem = "A data de assinatura não pode ser maior que a data de publicação";	
+	}elseif($data_publicacao > $data_inicio){
+		$mensagem = "A data de publicação não pode ser maior que a data de início do contrato";
+	}elseif($data_inicio > $data_termino){
+		$mensagem = "A data de início não pode ser maior que a data de término do contrato";
+	}
+	
+	return $mensagem;
+
+}
+
+function validar_valores_contrato($valor_global, $valor_empenhado, $valor_liquidado, $valor_pago){
+		
+	$mensagem = "";	
+		
+	if($valor_global < $valor_empenhado){
+		$mensagem = "O valor global não pode ser menor que o valor empenhado";	
+	}elseif($valor_empenhado < $valor_liquidado){
+		$mensagem = "O valor empenhado não pode ser menor que o valor liquidado";
+	}elseif($valor_empenhado < $valor_pago){
+		$mensagem = "O valor empenhado não pode ser menor que o valor pago";
+	}elseif($valor_liquidado < $valor_pago){
+		$mensagem = "O valor liquidado não pode ser menor que o valor pago";
+	}
+	
+	return $mensagem;
+
+}
+
 
 //Funções de convênios
 

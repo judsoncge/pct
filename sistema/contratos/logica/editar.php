@@ -22,11 +22,19 @@ $vinculacao = strtoupper($_POST["vinculacao"]);
 
 $data_assinatura = $_POST["data_assinatura"];
 
-$data_inicio = $_POST["data_inicio"];
-
 $data_publicacao = $_POST["data_publicacao"];
 
+$data_inicio = $_POST["data_inicio"];
+
 $data_termino = $_POST["data_termino"];
+
+$m = validar_vigencia_contrato($data_assinatura, $data_publicacao, $data_inicio, $data_termino);
+
+if($m!=""){
+	echo "<script>alert('$m')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
 
 $numero_contrato = $_POST["numero_contrato"];
 
@@ -39,6 +47,14 @@ $valor_empenhado = $_POST["valor_empenhado"];
 $valor_liquidado = $_POST["valor_liquidado"];
 
 $valor_pago = $_POST["valor_pago"];
+
+$m2 = validar_valores_contrato($valor_global, $valor_empenhado, $valor_liquidado, $valor_pago);
+
+if($m2!=""){
+	echo "<script>alert('$m2')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
 
 $valor_diferenca = $valor_global - $valor_pago;
 

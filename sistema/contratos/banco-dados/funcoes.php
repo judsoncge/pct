@@ -4,9 +4,6 @@ function cadastrar_contrato($conexao_com_banco, $empresa, $orgao, $gestor, $obje
 	
 	$resultado = mysqli_query($conexao_com_banco, "INSERT INTO tb_contratos VALUES ('a', '$empresa', '$orgao', '$gestor', '$objeto', '$modalidade', '$processo', '$vinculacao', '$data_assinatura', '$data_inicio', '$data_publicacao', '$data_termino', '$numero_contrato', NULLIF('$numero_contrato_siafi',''), '$valor_global', '$valor_empenhado', '$valor_liquidado', '$valor_pago', '$prorrogavel', '$termo', '$data_ultima_atualizacao', '$servidor_atualizou', 'ATIVO')") or die(mysqli_error($conexao_com_banco));	
 	
-
-	
-	
 }
 
 function editar_contrato($conexao_com_banco, $empresa, $orgao, $gestor, $objeto, $modalidade, $processo, $vinculacao, $data_assinatura, $data_inicio, $data_publicacao, $data_termino, $numero_contrato, $numero_contrato_siafi, $valor_global, $valor_empenhado, $valor_liquidado, $valor_pago, $prorrogavel, $termo, $data_ultima_atualizacao, $servidor_atualizou, $id){
