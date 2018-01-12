@@ -50,7 +50,7 @@ $p = retorna_permissao_servidor($_SESSION["id"], "GERENCIAR_CONVENIOS", $conexao
 									<th><center>Convenente</center></th>
 									<th><center>Valor Total</center></th>
 									<th><center>Valor Liberado</center></th>
-									<th><center>Data de Término</center></th>
+									<th><center>Data de Início</center></th>
 									<th><center>Detalhes</center></th>
 									<?php if($p){ ?>	
 										<th><center>Ação</center></th>
@@ -84,14 +84,14 @@ $p = retorna_permissao_servidor($_SESSION["id"], "GERENCIAR_CONVENIOS", $conexao
 										</center>
 									</td>
 									<td>
-										<center><?php echo "R$ " . number_format($r->VL_PARTIDA_TOTAL+$r->VL_CONTRAPARTIDA_TOTAL,2, ",", ".") ?></center>
+										<center><?php echo "R$ " . number_format($r->VL_PARTIDA+$r->VL_ADITIVO_PARTIDA+$r->VL_CONTRAPARTIDA+$r->VL_ADITIVO_CONTRAPARTIDA,2, ",", ".") ?></center>
 									</td>
 									<td>
 										<center><?php echo "R$ " . number_format($r->VL_PARTIDA_LIBERADO+$r->VL_CONTRAPARTIDA_LIBERADO,2, ",", ".") ?></center>
 									</td>
 									<td>
 										<center>
-											<?php echo date_format(new DateTime($r->DT_TERMINO), 'd/m/Y') ?>
+											<?php echo date_format(new DateTime($r->DT_INICIO), 'd/m/Y') ?>
 										</center>
 									</td>
 									<td>

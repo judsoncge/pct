@@ -450,18 +450,18 @@ function validar_datas_convenio($data_inicio, $data_termino, $data_ultima_libera
 		
 	$mensagem = "";	
 		
-	if($data_inicio > $data_termino || $data_inicio > $data_ultima_liberacao || $data_inicio > $data_prorrogacao || $data_inicio > $data_prestacao_contas){
-		$mensagem = "Não pode haver datas menores do que a data de início do convênio";	
+	if($data_inicio > $data_termino){
+		$mensagem = "A data de início não pode ser maior que a data de término do contrato";	
 	}
-	
-	return $mensagem;
-
-}
-
-function validar_prorrogacao_convenio($data_termino, $data_prorrogacao){
-		
-	$mensagem = "";	
-		
+	if($data_inicio >= $data_ultima_liberacao){
+		$mensagem = "A data de início não pode ser maior que a data da última liberação";	
+	}
+	if($data_inicio > $data_prorrogacao){
+		$mensagem = "A data de início não pode ser maior que a data de prorrogação";	
+	}
+	if($data_inicio > $data_prestacao_contas){
+		$mensagem = "A data de início não pode ser maior que a data de prestação de contas";	
+	}
 	if($data_termino > $data_prorrogacao){
 		$mensagem = "A data de término não pode ser maior que a data de prorrogação";	
 	}
@@ -470,29 +470,24 @@ function validar_prorrogacao_convenio($data_termino, $data_prorrogacao){
 
 }
 
-function validar_valores_convenio_partida($valor_partida_total, $valor_partida_liberado){
+
+function validar_valores_convenio($valor_partida, $valor_aditivo_partida, $valor_partida_liberado, $valor_contrapartida, $valor_aditivo_contrapartida, $valor_contrapartida_liberado){
 		
 	$mensagem = "";	
 		
-	if($valor_partida_liberado > $valor_partida_total){
-		$mensagem = "O valor liberado da partida não pode ser maior que o valor total da partida";	
+	if($valor_partida_liberado > ($valor_partida + $valor_aditivo_partida)){
+		$mensagem = "O valor liberado da partida não pode ser maior que o valor total da partida acrescido do aditivo de partida";	
 	}
+	if($valor_contrapartida_liberado > ($valor_contrapartida + $valor_contrapartida_liberado)){
+		$mensagem = "O valor liberado da contrapartida não pode ser maior que o valor total da contrapartida acrescido do aditivo de contrapartida";	
+	}
+	
 	
 	return $mensagem;
 
 }
 
-function validar_valores_convenio_contrapartida($valor_contrapartida_total, $valor_contrapartida_liberado){
-		
-	$mensagem = "";	
-		
-	if($valor_contrapartida_liberado > $valor_contrapartida_total){
-		$mensagem = "O valor liberado da contrapartida não pode ser maior que o valor total da contrapartida";	
-	}
-	
-	return $mensagem;
 
-}
 
 
 //Funções de empresa

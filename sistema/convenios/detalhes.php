@@ -45,20 +45,21 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<hr>
 							<h2>VALOR</h2>
 							<hr>
-							<b>Valor de partida total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_TOTAL"],2, ",", ".") ?><br>
-							<b>Valor de partida liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_LIBERADO"],2, ",", ".") ?><br>
-							<b>Porcentagem de partida liberado/total</b>:          <?php echo number_format(($informacoes["VL_PARTIDA_LIBERADO"]/$informacoes["VL_PARTIDA_TOTAL"])*100,1,".","") . "%" ?><br>
-							<br>
-							<b>Valor de contrapartida total</b>:             <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA_TOTAL"],2, ",", ".") ?><br>
-							<b>Valor de contrapartida liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
-							<b>Porcentagem de contrapartida liberado/total</b>:          <?php echo number_format(($informacoes["VL_CONTRAPARTIDA_LIBERADO"]/$informacoes["VL_CONTRAPARTIDA_TOTAL"])*100,1,".","") . "%" ?><br>
-							<br>
-							<b>Valor total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"]+$informacoes["VL_ADITIVO_PARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"],2, ",", ".") ?><br>
-							<b>Valor total liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
-							<b>Porcentagem liberado/total</b>:          <?php echo number_format((($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"])/($informacoes["VL_PARTIDA_TOTAL"]+$informacoes["VL_CONTRAPARTIDA_TOTAL"]+$informacoes["VL_ADITIVO_PARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"]))*100,1,".","") . "%" ?><br>
-							<br>
+							<b>Valor de partida</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA"],2, ",", ".") ?><br>
 							<b>Valor aditivo de partida</b>:             <?php echo "R$ " . number_format($informacoes["VL_ADITIVO_PARTIDA"],2, ",", ".") ?><br>
+							<b>Valor de partida total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA"]+$informacoes["VL_ADITIVO_PARTIDA"],2, ",", ".") ?><br>
+							<b>Valor de partida liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_LIBERADO"],2, ",", ".") ?><br>
+							<b>Porcentagem de partida liberado/total</b>:          <?php echo number_format(($informacoes["VL_PARTIDA_LIBERADO"]/($informacoes["VL_PARTIDA"]+$informacoes["VL_ADITIVO_PARTIDA"]))*100,1,".","") . "%" ?><br>
+							<br>
+							<b>Valor de contrapartida</b>:             <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA"],2, ",", ".") ?><br>
 							<b>Valor aditivo de contrapartida</b>:             <?php echo "R$ " . number_format($informacoes["VL_ADITIVO_CONTRAPARTIDA"],2, ",", ".") ?><br>
+							<b>Valor de contrapartida total</b>:             <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"],2, ",", ".") ?><br>
+							<b>Valor de contrapartida liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
+							<b>Porcentagem de contrapartida liberado/total</b>:          <?php echo number_format(($informacoes["VL_CONTRAPARTIDA_LIBERADO"]/($informacoes["VL_CONTRAPARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"]))*100,1,".","") . "%" ?><br>
+							<br>
+							<b>Valor total</b>:             <?php echo "R$ " . number_format($informacoes["VL_PARTIDA"]+$informacoes["VL_CONTRAPARTIDA"]+$informacoes["VL_ADITIVO_PARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"],2, ",", ".") ?><br>
+							<b>Valor total liberado</b>:          <?php echo "R$ " . number_format($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"],2, ",", ".") ?><br>
+							<b>Porcentagem liberado/total</b>:          <?php echo number_format((($informacoes["VL_PARTIDA_LIBERADO"]+$informacoes["VL_CONTRAPARTIDA_LIBERADO"])/($informacoes["VL_PARTIDA"]+$informacoes["VL_CONTRAPARTIDA"]+$informacoes["VL_ADITIVO_PARTIDA"]+$informacoes["VL_ADITIVO_CONTRAPARTIDA"]))*100,1,".","") . "%" ?><br>							
 							<hr>
 							<h2>OUTRAS INFORMAÇÕES</h2>
 							<hr>

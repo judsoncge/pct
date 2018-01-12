@@ -108,8 +108,8 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Valor de partida total</label>
-										<input class="form-control" id="valor_partida_total" name="valor_partida_total" type="number" step="0.01" value="<?php echo $informacoes["VL_PARTIDA_TOTAL"] ?>" required />	  
+										<label class="control-label" for="exampleInputEmail1">Valor de partida</label>
+										<input class="form-control" id="valor_partida" name="valor_partida" type="number" step="0.01" value="<?php echo $informacoes["VL_PARTIDA"] ?>" required />	  
 									</div> 
 								</div>
 								<div class="col-md-3">
@@ -120,8 +120,8 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Valor de contrapartida total</label>
-										<input class="form-control" id="valor_contrapartida_total" name="valor_contrapartida_total" type="number" step="0.01" value="<?php echo $informacoes["VL_CONTRAPARTIDA_TOTAL"] ?>" required />	  
+										<label class="control-label" for="exampleInputEmail1">Valor de contrapartida</label>
+										<input class="form-control" id="valor_contrapartida" name="valor_contrapartida" type="number" step="0.01" value="<?php echo $informacoes["VL_CONTRAPARTIDA"] ?>" required />	  
 									</div>				
 								</div>
 								<div class="col-md-3">
