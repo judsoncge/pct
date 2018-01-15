@@ -46,6 +46,8 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 											<option value="<?php echo $informacoes["NM_TIPO"] ?>"><?php echo $informacoes["NM_TIPO"] ?></option>
 											<option value="MOVEL">Móvel</option>
 											<option value="FIXO">Fixo</option>
+											<option value="MODEM">Modem</option>
+											<option value="MOVEL MODEM">Móvel Modem</option>
 										</select>
 									</div> 
 								</div>

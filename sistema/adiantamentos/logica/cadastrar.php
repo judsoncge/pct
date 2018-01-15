@@ -20,7 +20,11 @@ $valor_pj = $_POST["valor_pj"];
 
 $valor_recebido = $valor_material + $valor_pf + $valor_pj;
 
-$valor_devolvido = $_POST["valor_devolvido"];
+$valor_devolvido_consumo = $_POST["valor_devolvido_consumo"];
+
+$valor_devolvido_pf = $_POST["valor_devolvido_pf"];
+
+$valor_devolvido_pj = $_POST["valor_devolvido_pj"];
 
 $data_recebimento = $_POST["data_recebimento"];
 
@@ -38,7 +42,7 @@ $data_ultima_atualizacao = Date("Y-m-d");
 
 $servidor_atualizou = $_SESSION["id"];
 
-cadastrar_adiantamento($conexao_com_banco, $beneficiario, $orgao, $valor_recebido, $data_recebimento, $ordem_bancaria, $valor_material, $valor_pf, $valor_pj, $valor_devolvido, $data_prestacao_contas, $data_ultima_atualizacao, $servidor_atualizou);
+cadastrar_adiantamento($conexao_com_banco, $beneficiario, $orgao, $valor_recebido, $data_recebimento, $ordem_bancaria, $valor_material, $valor_pf, $valor_pj, $valor_devolvido_consumo, $valor_devolvido_pf, $valor_devolvido_pj, $data_prestacao_contas, $data_ultima_atualizacao, $servidor_atualizou);
 
 Header("Location:../listar.php?mensagem=Operação realizada com sucesso!&resultado=sucesso");
 

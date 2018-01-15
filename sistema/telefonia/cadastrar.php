@@ -41,6 +41,8 @@ include("../includes/verificacao-permissao.php");
 											<option value="">Selecione o tipo</option>
 											<option value="MOVEL">Móvel</option>
 											<option value="FIXO">Fixo</option>
+											<option value="MODEM">Modem</option>
+											<option value="MOVEL MODEM">Móvel Modem</option>
 										</select>
 									</div> 
 								</div>

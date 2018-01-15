@@ -48,28 +48,42 @@ include("../includes/verificacao-permissao.php");
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Valor de material de consumo</label>
 										<input class="form-control" id="valor_material" name="valor_material" type="number" step="0.01" required />  
 									</div> 
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Valor de serviços de terceiros PF</label>
 										<input class="form-control" id="valor_pf" name="valor_pf" type="number" step="0.01" required />  
 									</div> 
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Valor de serviços de terceiros PJ</label>
 										<input class="form-control" id="valor_pj" name="valor_pj" type="number" step="0.01" required />  
 									</div> 
 								</div>
-								<div class="col-md-3">
+							</div>
+							<div class="row">
+								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Valor devolvido</label>
-										<input class="form-control" id="valor_devolvido" name="valor_devolvido" type="number" step="0.01" required />  
+										<label class="control-label" for="exampleInputEmail1">Valor de material de consumo devolvido</label>
+										<input class="form-control" id="valor_devolvido_consumo" name="valor_devolvido_consumo" type="number" step="0.01" required />  
+									</div> 
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Valor de serviços de terceiros PF devolvido</label>
+										<input class="form-control" id="valor_devolvido_pf" name="valor_devolvido_pf" type="number" step="0.01" required />  
+									</div> 
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Valor de serviços de terceiros PJ devolvido</label>
+										<input class="form-control" id="valor_devolvido_pj" name="valor_devolvido_pj" type="number" step="0.01" required />  
 									</div> 
 								</div>
 							</div>

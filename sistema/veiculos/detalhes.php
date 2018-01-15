@@ -51,11 +51,11 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<h2>OUTRAS INFORMAÇÕES</h2>
 							<hr>
 							<b>Órgão Pertencente</b>:                <?php echo retorna_nome_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?><br>
-							<b>Órgão Cedido</b>:                     <?php echo retorna_nome_orgao($informacoes["ID_ORGAO_RECEBIDO"], $conexao_com_banco) ?><br>
+							<b>Órgão Cedido</b>:                     <?php echo retorna_nome_orgao($informacoes["ID_ORGAO_CEDIDO"], $conexao_com_banco) ?><br>
 							<b>Termo de Cessão ou Autorização</b>:   <?php echo $informacoes["NR_TERMO_CESSAO"] ?><br>							
 							<b>Recolhido a Garagem a Noite</b>:      <?php echo ($informacoes["BL_RECOLHIDO_NOITE"]) ? "Sim" : "Não" ?><br>
 							<b>Locado ou Próprio</b>:                <?php echo $informacoes["NM_LOCADO_PROPRIO"] ?><br>
-							<b>Nome da Locadora</b>:                 <?php echo $informacoes["NM_LOCADORA"] ?><br>
+							<b>Nome da Locadora</b>:                 <?php echo retorna_nome_empresa($informacoes["ID_EMPRESA"], $conexao_com_banco) ?><br>
 							<b>Padrão</b>:                           <?php echo $informacoes["NM_PADRAO"] ?><br>
 							<b>Valor Aluguel Mensal</b>:             <?php echo "R$ " . number_format($informacoes["VL_ALUGUEL_MENSAL"] , 2, ",", ".")?><br>
 							<b>Observações</b>:                <?php echo $informacoes["NM_OBSERVACOES"] ?><br>						

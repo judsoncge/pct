@@ -33,13 +33,19 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										</select>
 									</div> 
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-2">
 									<div class="form-group">										
 										<label class="control-label" for="exampleInputEmail1">Placa</label>
 										<input class="form-control" id="placa" name="placa" type="text" maxlength="255" value="<?php echo $informacoes["NM_PLACA"] ?>" required />				  
 									</div>	  
-								</div> 							
+								</div>
 								<div class="col-md-4">
+									<div class="form-group">										
+										<label class="control-label" for="exampleInputEmail1">Modelo</label>
+										<input class="form-control" id="modelo" name="modelo" type="text" maxlength="255" value="<?php echo $informacoes["NM_MODELO"] ?>" required />				  
+									</div>	  
+								</div>								
+								<div class="col-md-2">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Locado ou Próprio</label>
 										<select class="form-control" id="locado_proprio" name="locado_proprio" required />
@@ -50,20 +56,57 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 									</div> 
 								</div>								
 							</div>
+							<strong><h4>Em caso de veículo locado</h4></strong>			
 							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">										
-										<label class="control-label" for="exampleInputEmail1">Em Caso de Veículo Locado, Adicionar Locadora</label>
-										<input class="form-control" id="locadora" name="locadora" type="text" maxlength="255" value="<?php echo $informacoes["NM_LOCADORA"] ?>" required />				  
-									</div>	  
-								</div>
-								<div class="col-md-2">
+								<div class="col-md-6">									
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Selecione a Locadora </label>
+										<a href="../empresas/cadastrar.php">cadastrar nova</a>
+										<select class="form-control" id="locadora" name="locadora" />
+											<option value="<?php echo $informacoes["ID_EMPRESA"] ?>"><?php echo retorna_nome_empresa($informacoes["ID_EMPRESA"], $conexao_com_banco) ?></option>
+											<?php $lista = retorna_empresas($conexao_com_banco);
+											while($r = mysqli_fetch_object($lista)){ ?>
+												<option value="<?php echo $r->ID ?>"><?php echo $r->NM_EMPRESA ?></option>
+											<?php } ?>
+										</select>
+									</div> 
+								</div>								
+								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Padrão</label>
 										<select class="form-control" id="padrao" name="padrao" required />
 											<option value="<?php echo $informacoes["NM_PADRAO"] ?>"><?php echo $informacoes["NM_PADRAO"] ?></option>
+											<option value="A">A</option>
+											<option value="A-1">A-1</option>
+											<option value="A-2">A-2</option>
+											<option value="A-3">A-3</option>
 											<option value="B">B</option>
-											<option value="E1.1">E1.1</option>
+											<option value="B-1">B-1</option>
+											<option value="C">C</option>
+											<option value="C-1">C-1</option>
+											<option value="D">D</option>
+											<option value="D-1">D-1</option>
+											<option value="D-2">D-2</option>
+											<option value="D-2.1">D-2.1</option>
+											<option value="E">E</option>
+											<option value="E-1">E-1</option>
+											<option value="E-1.1">E-1.1</option>
+											<option value="E-2">E-2</option>
+											<option value="E-3">E-3</option>
+											<option value="F">F</option>
+											<option value="F-1">F-1</option>
+											<option value="F-2">F-2</option>
+											<option value="G">G</option>
+											<option value="G-1">G-1</option>
+											<option value="G-1.1">G-1.1</option>
+											<option value="G-2">G-2</option>
+											<option value="H">H</option>
+											<option value="H-1">H-1</option>
+											<option value="H-2">H-2</option>
+											<option value="I">I</option>
+											<option value="I-1">I-1</option>
+											<option value="I-2">I-2</option>
+											<option value="I-3">I-3</option>
 										</select>
 									</div> 
 								</div> 
@@ -72,13 +115,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<label class="control-label" for="exampleInputEmail1">Valor do Aluguel Mensal</label>
 										<input class="form-control" id="valor_aluguel" name="valor_aluguel" type="number" step="0.01" value="<?php echo $informacoes["VL_ALUGUEL_MENSAL"] ?>" required />  
 									</div> 
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">										
-										<label class="control-label" for="exampleInputEmail1">Modelo</label>
-										<input class="form-control" id="modelo" name="modelo" type="text" maxlength="255" value="<?php echo $informacoes["NM_MODELO"] ?>" required />				  
-									</div>	  
-								</div>
+								</div>								
 							</div>
 							<div class="row">			
 								<div class="col-md-3">
@@ -107,8 +144,8 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Se Veículo Estiver Cedido</label>
 										<select class="form-control" id="orgao_cedido" name="orgao_cedido" />
-											<option value="<?php echo $informacoes["ID_ORGAO_RECEBIDO"] ?>"> 
-												<?php echo retorna_nome_orgao($informacoes["ID_ORGAO_RECEBIDO"], $conexao_com_banco) ?>  
+											<option value="<?php echo $informacoes["ID_ORGAO_CEDIDO"] ?>"> 
+												<?php echo retorna_nome_orgao($informacoes["ID_ORGAO_CEDIDO"], $conexao_com_banco) ?>  
 											</option>
 											<?php $lista = retorna_orgaos($conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>

@@ -56,7 +56,7 @@ $servidor_atualizou = $_SESSION["id"];
 
 $id = $_GET["id"];
 
-editar_veiculos($conexao_com_banco, $placa, $locado_proprio, $locadora, $padrao, $valor_aluguel, $modelo, $renavam, $ano_veiculo, $licenciado, $orgao, $orgao_cedido, $termo_cessao, $manutencao, $logomarca, $seguro, $chipado, $mapa_controle, $condutor, $recolhido_garagem, $multa, $avaria, $observacoes, $data_ultima_atualizacao, $servidor_atualizou, $id);
+editar_veiculo($conexao_com_banco, $placa, $locado_proprio, $locadora, $padrao, $valor_aluguel, $modelo, $renavam, $ano_veiculo, $licenciado, $orgao, $orgao_cedido, $termo_cessao, $manutencao, $logomarca, $seguro, $chipado, $mapa_controle, $condutor, $recolhido_garagem, $multa, $avaria, $observacoes, $data_ultima_atualizacao, $servidor_atualizou, $id);
 
 Header("Location:../listar.php?mensagem=Operação realizada com sucesso!&resultado=sucesso");
 

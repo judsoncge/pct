@@ -728,6 +728,51 @@ function retorna_orgao_veiculo($id, $conexao_com_banco){
 	
 }
 
+function validar_locacao_veiculo($locado_proprio, $locadora, $padrao, $valor_aluguel){
+		
+	$mensagem = "";	
+		
+	if($locado_proprio == 'LOCADO' && $locadora == NULL){
+		$mensagem = "Selecione a empresa onde o veículo foi locado, caso não esteja na lista, cadastre uma nova empresa.";	
+	}
+	if($locado_proprio == 'LOCADO' && $padrao == NULL){
+		$mensagem = "Adicione o padrão do veículo locado.";	
+	}
+	if($locado_proprio == 'LOCADO' && $valor_aluguel == NULL){
+		$mensagem = "Adicione o valor do aluguel mensal do veículo locado.";	
+	}
+	if($locado_proprio == 'PROPRIO' && $locadora != NULL){
+		$mensagem = "Em caso de veículo próprio, o campo referente a empresa locadora de veículos não dever ser preenchido.";	
+	}
+	if($locado_proprio == 'PROPRIO' && $padrao != NULL){
+		$mensagem = "Em caso de veículo próprio, o campo referente ao padrão do veículo locado não dever ser preenchido.";	
+	}
+	if($locado_proprio == 'PROPRIO' && $valor_aluguel != NULL){
+		$mensagem = "Em caso de veículo próprio, o campo referente ao valor do aluguel mensal não dever ser preenchido.";	
+	}
+	
+	return $mensagem;
+
+}
+
+function validar_cessao_veiculo($orgao_cedido, $termo_cessao){
+		
+	$mensagem = "";	
+		
+	if($orgao_cedido == NULL && $termo_cessao != NULL){
+		$mensagem = "O campo referente ao termo de cessão ou autorização só deve ser preenchido caso o veículo esteja cedido a algum órgão, se for o caso, selecione também o órgão.";	
+	}
+	if($orgao_cedido != NULL && $termo_cessao == NULL){
+		$mensagem = "O campo referente ao órgão de destino só deve ser preenchido caso o veículo esteja cedido, se for o caso, informe também o termo de cessão ou autorização.";	
+	}
+	
+	return $mensagem;
+
+}
+
+
+
+
 //Funções de classificação contábil rmb
 
 

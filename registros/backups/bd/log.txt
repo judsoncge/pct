@@ -4,3 +4,5 @@
 ## 10/01/2018 15:37:11,56 ## - backup banco concluido 
 ## 11/01/2018 14:00:02,46 ## - backup banco concluido 
 ## 12/01/2018 14:00:01,23 ## - backup banco concluido 
+## 15/01/2018 14:00:02,45 ## - backup banco concluido 
+## 15/01/2018 15:23:46,48 ## - backup banco concluido 
