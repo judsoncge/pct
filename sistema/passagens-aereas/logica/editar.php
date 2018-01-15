@@ -14,6 +14,16 @@ $data_ida = $_POST["data_ida"];
 
 $data_volta = $_POST["data_volta"];
 
+$data_prestacao_contas = $_POST["data_prestacao_contas"];
+
+$m = validar_datas_passagens_aereas($data_ida, $data_volta, $data_prestacao_contas);
+
+if($m!=""){
+	echo "<script>alert('$m')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
+
 $valor_ida =  $_POST["valor_ida"];
 
 $valor_volta =  $_POST["valor_volta"];
@@ -21,8 +31,6 @@ $valor_volta =  $_POST["valor_volta"];
 $destino = strtoupper($_POST["destino"]);
 
 $finalidade = strtoupper($_POST["finalidade"]);
-
-$data_prestacao_contas = $_POST["data_prestacao_contas"];
 
 $data_ultima_atualizacao = Date("Y-m-d");
 

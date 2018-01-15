@@ -1069,4 +1069,19 @@ function retorna_uf_estado_cidade($cidade, $conexao_com_banco){
 	
 }
 
+//Funções de passagens aéreas
+function validar_datas_passagens_aereas($data_ida, $data_volta, $data_prestacao_contas){
+	
+	$mensagem = "";	
+		
+	if($data_ida > $data_volta){
+		$mensagem = "A data de ida não pode ser maior que a data de volta";	
+	}elseif($data_volta > $data_prestacao_contas){
+		$mensagem = "A data de volta não pode ser maior que a data de prestação de contas";
+	}
+	
+	return $mensagem;
+	
+}
+
 ?>
