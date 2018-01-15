@@ -38,7 +38,6 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Data de abastecimento</b>:          <?php echo date_format(new DateTime($informacoes["DT_ABASTECIMENTO"]), 'd/m/Y') ?><br>
 							<b>Total de Litros Abastecidos</b>:    <?php echo number_format($informacoes["NR_TOTAL_LITROS_ABASTECIDOS"] , 2, ",", ".") . " L" ?><br>
 							<b>Valor do litro abastecido</b>:      <?php echo "R$ " . number_format($informacoes["VL_LITRO_ABASTECIDO"] , 2, ",", ".")?><br>
-							<b>Cota semanal</b>:    <?php echo number_format($informacoes["NR_COTA_SEMANAL"] , 2, ",", ".") . " L" ?><br>
 						</div>
 					</div>
 					

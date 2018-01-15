@@ -48,7 +48,6 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_COMBUSTIVEL", $conex
 									<th><center>Órgão</center></th>
 									<th><center>Veículo</center></th>
 									<th><center>Total de litros</center></th>
-									<th><center>Cota mensal</center></th>
 									<th><center>Detalhes</center></th>
 									<?php if($p){ ?>	
 										<th><center>Ação</center></th>
@@ -79,11 +78,6 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_COMBUSTIVEL", $conex
 									<td>
 										<center>
 											<?php echo $r->NR_TOTAL_LITROS_ABASTECIDOS . " L" ?>								
-										</center>
-									</td>
-									<td>
-										<center>
-											<?php echo $r->NR_COTA_SEMANAL . " L" ?>
 										</center>
 									</td>
 									<td>

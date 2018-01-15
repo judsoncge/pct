@@ -39,24 +39,18 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<input class="form-control" id="data_abastecimento" name="data_abastecimento" type="date" value="<?php echo $informacoes["DT_ABASTECIMENTO"] ?>" required />	  
 									</div> 
 								</div> 							
-								<div class="col-md-2">
+								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Total abastecido</label>
 										<input class="form-control" id="total_litros" name="total_litros" type="number" value="<?php echo $informacoes["NR_TOTAL_LITROS_ABASTECIDOS"] ?>" required />	  
 									</div> 
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Valor do litro</label>
 										<input class="form-control" id="valor_litro" name="valor_litro" type="number" step="0.01" value="<?php echo $informacoes["VL_LITRO_ABASTECIDO"] ?>" required />	  
 									</div> 
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Cota semanal</label>
-										<input class="form-control" id="cota_semanal" name="cota_semanal" type="number" value="<?php echo $informacoes["NR_COTA_SEMANAL"] ?>" required />	  
-									</div> 
-								</div>								
+								</div>							
 							</div>
 							<div class="row" id="cad-button">
 								<div class="col-md-12">

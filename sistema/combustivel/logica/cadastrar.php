@@ -14,13 +14,11 @@ $total_litros = $_POST["total_litros"];
 
 $valor_litro =  $_POST["valor_litro"];
 
-$cota_semanal =  $_POST["cota_semanal"];
-
 $data_ultima_atualizacao = Date("Y-m-d");
 
 $servidor_atualizou = $_SESSION["id"];
 
-cadastrar_combustivel($conexao_com_banco, $veiculo, $data_abastecimento, $total_litros, $valor_litro, $cota_semanal, $data_ultima_atualizacao, $servidor_atualizou);
+cadastrar_combustivel($conexao_com_banco, $veiculo, $data_abastecimento, $total_litros, $valor_litro, $data_ultima_atualizacao, $servidor_atualizou);
 
 Header("Location:../listar.php?mensagem=Operação realizada com sucesso!&resultado=sucesso");
 
