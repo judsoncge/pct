@@ -586,6 +586,31 @@ function retorna_valor_diaria($numero_diarias, $tipo, $nome_grupo){
 	
 }
 
+function validar_datas_diaria($data_publicacao, $data_inicio, $data_termino, $data_prestacao_contas){
+		
+	$mensagem = "";	
+		
+	if($data_publicacao > $data_inicio){
+		$mensagem = "A data de publicação não pode ser maior que a data de início";	
+	}elseif($data_inicio > $data_termino){
+		$mensagem = "A data de início não pode ser maior que a data de término";
+	}elseif($data_termino > $data_prestacao_contas){
+		$mensagem = "A data de término não pode ser maior que a data de prestação de contas";
+	}elseif($data_prestacao_contas >= $data_termino){
+		$data_termino  = new DateTime($data_termino);
+		$data_prestacao_contas = new DateTime($data_prestacao_contas);	
+		$diferenca = $data_termino->diff($data_prestacao_contas);
+		$diferenca = $diferenca->format("%a");
+		$diferenca = (int)$diferenca;
+		if($diferenca > 5){
+			$mensagem = "A diferença entre a data de prestação de contas e a data de termino não pode ser superior a 5 dias";	
+		}	
+	}
+	
+	return $mensagem;
+
+}
+
 //Funções de grupos
 
 

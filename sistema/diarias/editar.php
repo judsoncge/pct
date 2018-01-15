@@ -60,17 +60,39 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de publicação</label>
+										<input class="form-control" id="data_publicacao" name="data_publicacao" type="date" value="<?php echo $informacoes["DT_PUBLICACAO"] ?>" required />	  
+									</div> 
+								</div>
+								
+								<div class="col-md-3">
+									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de início da viagem</label>
 										<input class="form-control" id="data_inicio" name="data_inicio" type="date" value="<?php echo $informacoes["DT_INICIO"] ?>" required />	  
 									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de término da viagem</label>
+										<input class="form-control" id="data_termino" name="data_termino" type="date" value="<?php echo $informacoes["DT_TERMINO"] ?>" required />	  
+									</div> 
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de prestação de contas</label>
+										<input class="form-control" id="data_prestacao_contas" name="data_prestacao_contas" type="date" value="<?php echo $informacoes["DT_PRESTACAO_CONTAS"] ?>" required />	  
+									</div> 
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número de diárias</label>
 										<input class="form-control" id="numero_diarias" name="numero_diarias" type="number" step="0.01" value="<?php echo $informacoes["NR_DIARIAS"] ?>" required />	  
 									</div> 
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Tipo de diária</label>
 										<select class="form-control" id="tipo" name="tipo" required />
@@ -83,26 +105,12 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										</select>
 									</div> 
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número da portaria</label>
 										<input class="form-control" id="numero_portaria" name="numero_portaria" placeholder="Digite o número da portaria" type="text" maxlength="255" value="<?php echo $informacoes["NM_NUMERO_PORTARIA"] ?>" required />				  
 									</div>				
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de publicação</label>
-										<input class="form-control" id="data_publicacao" name="data_publicacao" type="date" value="<?php echo $informacoes["DT_PUBLICACAO"] ?>" required />	  
-									</div> 
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de prestação de contas</label>
-										<input class="form-control" id="data_prestacao_contas" name="data_prestacao_contas" type="date" value="<?php echo $informacoes["DT_PRESTACAO_CONTAS"] ?>" required />	  
-									</div> 
-								</div>
+								</div>	
 							</div>
 							<div class="row" id="cad-button">
 								<div class="col-md-12">

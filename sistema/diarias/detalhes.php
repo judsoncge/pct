@@ -38,6 +38,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Meio de transporte</b>:       <?php echo $informacoes["NM_MEIO_TRANSPORTE"] ?><br>
 							<b>Objetivo</b>:                 <?php echo $informacoes["NM_OBJETIVO"] ?><br>
 							<b>Data início da viagem</b>:    <?php echo date_format(new DateTime($informacoes["DT_INICIO"]), 'd/m/Y')?><br>
+							<b>Data término da viagem</b>:    <?php echo date_format(new DateTime($informacoes["DT_TERMINO"]), 'd/m/Y')?><br>
 							<b>Número de diárias</b>         <?php echo $informacoes["NR_DIARIAS"] ?><br>
 							<b>Tipo</b>:                     <?php echo $informacoes["NM_TIPO"] ?><br>
 							<b>Valor pago</b>:               <?php echo "R$ " . number_format($informacoes["VL_PAGO"] , 2, ",", ".")?><br>

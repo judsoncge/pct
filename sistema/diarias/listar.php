@@ -47,7 +47,8 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_DIARIAS", $conexao_c
 								<tr>
 									<th><center>Órgão</center></th>
 									<th><center>Beneficiário</center></th>
-									<th><center>Data da viagem</center></th>
+									<th><center>Data de início</center></th>
+									<th><center>Data de término</center></th>
 									<th><center>Valor pago</center></th>
 									<th><center>Detalhes</center></th>
 									<?php if($p){ ?>	
@@ -79,6 +80,11 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_DIARIAS", $conexao_c
 									<td>
 										<center>
 											<?php echo date_format(new DateTime($r->DT_INICIO), 'd/m/Y') ?>
+										</center>
+									</td>
+									<td>
+										<center>
+											<?php echo date_format(new DateTime($r->DT_TERMINO), 'd/m/Y') ?>
 										</center>
 									</td>
 									<td>
