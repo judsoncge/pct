@@ -58,12 +58,12 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<br>
 							<b>Data de ida</b>:
 							<?php 
-								echo date_format(new DateTime($informacoes["DT_IDA"]), 'd/m/Y') 
+								echo date_format(new DateTime($informacoes["DT_IDA"]), 'd/m/Y H:i') 
 							?>
 							<br>
 							<b>Data de volta</b>:
 							<?php 
-								echo date_format(new DateTime($informacoes["DT_VOLTA"]), 'd/m/Y')
+								echo date_format(new DateTime($informacoes["DT_VOLTA"]), 'd/m/Y H:i')
 							?>
 							<br>
 							<hr>

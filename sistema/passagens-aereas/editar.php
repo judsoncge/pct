@@ -36,13 +36,13 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de ida</label>
-										<input class="form-control" id="data_ida" name="data_ida" type="date" value="<?php echo $informacoes["DT_IDA"] ?>" required />	  
+										<input class="form-control" id="data_ida" name="data_ida" type="datetime-local" value="<?php echo retorna_data_datetime_local("tb_passagens_aereas","DT_IDA", $id, $conexao_com_banco); ?>" required />	  
 									</div> 
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de volta</label>
-										<input class="form-control" id="data_volta" name="data_volta" type="date" value="<?php echo $informacoes["DT_VOLTA"] ?>" required />	  
+										<input class="form-control" id="data_volta" name="data_volta" type="datetime-local" value="<?php echo retorna_data_datetime_local("tb_passagens_aereas","DT_VOLTA", $id, $conexao_com_banco) ?>" required />	  
 									</div> 
 								</div>
 							</div>

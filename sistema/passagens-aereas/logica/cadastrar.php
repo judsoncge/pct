@@ -28,7 +28,7 @@ $valor_ida =  $_POST["valor_ida"];
 
 $valor_volta =  $_POST["valor_volta"];
 
-$bilhete = $_POST["bilhete"];
+$bilhete = strtoupper($_POST["bilhete"]);
 
 $destino = strtoupper($_POST["destino"]);
 

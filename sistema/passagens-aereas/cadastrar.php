@@ -32,13 +32,13 @@ include('../includes/verificacao-permissao.php');
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de ida</label>
-										<input class="form-control" id="data_ida" name="data_ida" type="date" required />	  
+										<input class="form-control" id="data_ida" name="data_ida" type="datetime-local" required />	  
 									</div> 
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de volta</label>
-										<input class="form-control" id="data_volta" name="data_volta" type="date" required />	  
+										<input class="form-control" id="data_volta" name="data_volta" type="datetime-local" required />	  
 									</div> 
 								</div>
 							</div>

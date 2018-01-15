@@ -28,6 +28,8 @@ $valor_ida =  $_POST["valor_ida"];
 
 $valor_volta =  $_POST["valor_volta"];
 
+$bilhete = strtoupper($_POST["bilhete"]);
+
 $destino = strtoupper($_POST["destino"]);
 
 $finalidade = strtoupper($_POST["finalidade"]);
@@ -38,7 +40,7 @@ $servidor_atualizou = $_SESSION["id"];
 
 $id = $_GET["id"];
 
-editar_passagem_aerea($conexao_com_banco, $beneficiario, $orgao, $data_ida, $data_volta, $valor_ida, $valor_volta, $finalidade, $destino, $data_prestacao_contas, $data_ultima_atualizacao, $servidor_atualizou, $id);
+editar_passagem_aerea($conexao_com_banco, $beneficiario, $orgao, $data_ida, $data_volta, $valor_ida, $valor_volta, $bilhete, $finalidade, $destino, $data_prestacao_contas, $data_ultima_atualizacao, $servidor_atualizou, $id);
 
 Header("Location:../listar.php?mensagem=Operação realizada com sucesso!&resultado=sucesso");
 

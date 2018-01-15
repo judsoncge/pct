@@ -79,7 +79,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_PASSAGENS_AEREAS", $
 									</td>
 									<td>
 										<center>
-											<?php echo date_format(new DateTime($r->DT_IDA), 'd/m/Y') ?>
+											<?php echo date_format(new DateTime($r->DT_IDA), 'd/m/Y H:i') ?>
 										</center>
 									</td>
 									<td>

@@ -8,6 +8,16 @@ $ROOT = ' http://'.$_SERVER['SERVER_NAME'].'/pct/';
 
 //Funções diversas
 
+function retorna_data_datetime_local($tabela, $nome_campo_data, $id, $conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT DATE_FORMAT($nome_campo_data, '%Y-%m-%dT%H:%i') AS data FROM $tabela WHERE ID='$id'");	
+
+	$data = mysqli_fetch_row($resultado);
+	
+	return $data[0];	
+	
+}
+
 function retorna_campos_permissoes_visualizar($conexao_com_banco){
 	
 	$retornoquery = mysqli_query($conexao_com_banco, "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tb_permissoes' AND COLUMN_NAME LIKE 'VISUALIZAR_%'");
