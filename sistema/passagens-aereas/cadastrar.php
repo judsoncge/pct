@@ -31,13 +31,13 @@ include('../includes/verificacao-permissao.php');
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Previsão de ida</label>
+										<label class="control-label" for="exampleInputEmail1">Data de ida</label>
 										<input class="form-control" id="data_ida" name="data_ida" type="date" required />	  
 									</div> 
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Previsão de volta</label>
+										<label class="control-label" for="exampleInputEmail1">Data de volta</label>
 										<input class="form-control" id="data_volta" name="data_volta" type="date" required />	  
 									</div> 
 								</div>
@@ -58,8 +58,14 @@ include('../includes/verificacao-permissao.php');
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Destino</label>
-										<input class="form-control" id="destino" name="destino" placeholder="Digite o destino" type="text" maxlength="255" required />				  
-									</div>				
+										<select class="form-control" id="destino" name="destino" required />
+											<option value="">Selecione o destino</option>
+											<?php $lista = retorna_estados_cidades($conexao_com_banco);
+											while($r = mysqli_fetch_object($lista)){ ?>
+												<option value="<?php echo $r->ID ?>"><?php echo $r->UF_ESTADO . " - " . $r->NM_CIDADE ?></option>
+											<?php } ?>
+										</select>
+									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
@@ -68,8 +74,14 @@ include('../includes/verificacao-permissao.php');
 									</div> 
 								</div>
 							</div>
-							<div class="row" id="cad-button">
-								<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Número do Bilhete</label>
+										<input class="form-control" id="bilhete" name="bilhete" placeholder="Digite o número do bilhete" type="text" maxlength="255" required />				  
+									</div>				
+								</div>
+								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Finalidade</label>
 										<input class="form-control" id="finalidade" name="finalidade" placeholder="Digite a finalidade" type="text" maxlength="255" required />				  

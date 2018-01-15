@@ -12,7 +12,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 <!-- Conteúdo da Página -->
 <div id="page-content-wrapper">
 	<div class="container titulo-pagina">
-		<p>Edição de Passagem de <?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?> para <?php echo $informacoes["NM_DESTINO"] ?></p>
+		<p>Edição de Passagem de <?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?> para <?php echo retorna_nome_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco); ?></p>
 	</div>
 	<div class="container caixa-conteudo">
 		<div class="row">
@@ -35,13 +35,13 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Previsão de ida</label>
+										<label class="control-label" for="exampleInputEmail1">Data de ida</label>
 										<input class="form-control" id="data_ida" name="data_ida" type="date" value="<?php echo $informacoes["DT_IDA"] ?>" required />	  
 									</div> 
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Previsão de volta</label>
+										<label class="control-label" for="exampleInputEmail1">Data de volta</label>
 										<input class="form-control" id="data_volta" name="data_volta" type="date" value="<?php echo $informacoes["DT_VOLTA"] ?>" required />	  
 									</div> 
 								</div>
@@ -62,8 +62,14 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Destino</label>
-										<input class="form-control" id="destino" name="destino" placeholder="Digite o destino" type="text" maxlength="255" value="<?php echo $informacoes["NM_DESTINO"] ?>" required />				  
-									</div>				
+										<select class="form-control" id="destino" name="destino" required />
+											<option value="<?php echo $informacoes["ID_CIDADE_DESTINO"] ?>"><?php echo retorna_uf_estado_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco) . " - " . retorna_nome_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco) ?></option>
+											<?php $lista = retorna_estados_cidades($conexao_com_banco);
+											while($r = mysqli_fetch_object($lista)){ ?>
+												<option value="<?php echo $r->ID ?>"><?php echo $r->UF_ESTADO . " - " . $r->NM_CIDADE ?></option>
+											<?php } ?>
+										</select>
+									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
@@ -72,8 +78,14 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 									</div> 
 								</div>
 							</div>
-							<div class="row" id="cad-button">
-								<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Número do Bilhete</label>
+										<input class="form-control" id="bilhete" name="bilhete" placeholder="Digite o número do bilhete" type="text" maxlength="255" value="<?php echo $informacoes["NM_NUMERO_BILHETE"] ?>" required />				  
+									</div>				
+								</div>
+								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Finalidade</label>
 										<input class="form-control" id="finalidade" name="finalidade" placeholder="Digite a finalidade" type="text" maxlength="255" value="<?php echo $informacoes["NM_FINALIDADE"] ?>" required />				  

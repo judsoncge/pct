@@ -13,7 +13,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 <div id="page-content-wrapper">
 	<div class="container titulo-pagina">				
 		<p>Diária de <?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?>  
-		para <?php echo $informacoes["NM_DESTINO"] ?></p>		
+		para <?php echo retorna_nome_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco); ?></p>		
 	</div>
 	
 	<div class="container caixa-conteudo">
@@ -34,7 +34,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<hr>
 							<h2>INFORMAÇÕES DA DIÁRIA</h2>
 							<hr>
-							<b>Destino</b>:                  <?php echo $informacoes["NM_DESTINO"] ?><br>
+							<b>Destino</b>:                  <?php echo retorna_nome_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco) . " - " . retorna_uf_estado_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco); ?><br>
 							<b>Meio de transporte</b>:       <?php echo $informacoes["NM_MEIO_TRANSPORTE"] ?><br>
 							<b>Objetivo</b>:                 <?php echo $informacoes["NM_OBJETIVO"] ?><br>
 							<b>Data início da viagem</b>:    <?php echo date_format(new DateTime($informacoes["DT_INICIO"]), 'd/m/Y')?><br>

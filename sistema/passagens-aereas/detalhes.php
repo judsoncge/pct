@@ -13,7 +13,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 <div id="page-content-wrapper">
 	<div class="container titulo-pagina">				
 		<p>Passagem de <?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?>  
-		para <?php echo $informacoes["NM_DESTINO"] ?></p>		
+		<?php echo retorna_nome_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco); ?></p>		
 	</div>
 	
 	<div class="container caixa-conteudo">
@@ -28,26 +28,70 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							
 							<h2>INFORMAÇÕES DO BENEFICIÁRIO</h2>
 							<hr>
-							<b>Beneficiário</b>:         <?php echo retorna_nome_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?><br>
-							<b>Matrícula</b>:            <?php echo retorna_matricula_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?><br>
-							<b>Condição</b>:              <?php echo retorna_condicao_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) ?><br>
+							<b>Beneficiário</b>:
+							<?php 
+								echo retorna_nome_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) 
+							?>
+							<br>
+							<b>Matrícula</b>:
+							<?php 
+								echo retorna_matricula_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco)
+							?>
+							<br>
+							<b>Condição</b>:
+							<?php 
+								echo retorna_condicao_servidor($informacoes["ID_SERVIDOR_BENEFICIARIO"], $conexao_com_banco) 
+							?>
+							<br>
 							<hr>
 							<h2>INFORMAÇÕES DA PASSAGEM</h2>
 							<hr>
-							<b>Destino</b>:                  <?php echo $informacoes["NM_DESTINO"] ?><br>
-							<b>Finalidade</b>:               <?php echo $informacoes["NM_FINALIDADE"] ?><br>
-							<b>Previsão de ida</b>:          <?php echo date_format(new DateTime($informacoes["DT_IDA"]), 'd/m/Y') ?><br>
-							<b>Previsão de volta</b>:          <?php echo date_format(new DateTime($informacoes["DT_VOLTA"]), 'd/m/Y') ?><br>
-			                
+							<b>Destino</b>:
+							<?php 
+								echo retorna_nome_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco) . " - " . retorna_uf_estado_cidade($informacoes["ID_CIDADE_DESTINO"], $conexao_com_banco); 
+							?>
+							<br>
+							<b>Finalidade</b>:
+							<?php 
+								echo $informacoes["NM_FINALIDADE"] 
+							?>
+							<br>
+							<b>Data de ida</b>:
+							<?php 
+								echo date_format(new DateTime($informacoes["DT_IDA"]), 'd/m/Y') 
+							?>
+							<br>
+							<b>Data de volta</b>:
+							<?php 
+								echo date_format(new DateTime($informacoes["DT_VOLTA"]), 'd/m/Y')
+							?>
+							<br>
 							<hr>
 							<h2>INFORMAÇÕES DE VALOR</h2>
 							<hr>
-							<b>Valor pago ida</b>:               <?php echo "R$ " . number_format($informacoes["VL_IDA"] , 2, ",", ".")?><br>
-							<b>Valor pago volta</b>:               <?php echo "R$ " . number_format($informacoes["VL_VOLTA"] , 2, ",", ".")?><br>
+							<b>Valor pago ida</b>:
+							<?php
+								echo "R$ " . number_format($informacoes["VL_IDA"] , 2, ",", ".")
+							?>
+							<br>
+							<b>Valor pago volta</b>:
+							<?php 
+								echo "R$ " . number_format($informacoes["VL_VOLTA"] , 2, ",", ".")
+							?>
+							<br>
 							<hr>
 							<h2>OUTRAS INFORMAÇÕES</h2>
 							<hr>
-							<b>Data de prestação de contas</b>:       <?php echo date_format(new DateTime($informacoes["DT_PRESTACAO_CONTAS"]), 'd/m/Y') ?><br>
+							<b>Número do Bilhete</b>:
+							<?php 
+								echo $informacoes["NM_NUMERO_BILHETE"] 
+							?>
+							<br>
+							<b>Data de prestação de contas</b>:
+							<?php 
+								echo date_format(new DateTime($informacoes["DT_PRESTACAO_CONTAS"]), 'd/m/Y') 
+							?>
+							<br>
 						</div>
 					</div>
 					

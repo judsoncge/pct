@@ -568,7 +568,7 @@ function retorna_valor_diaria($numero_diarias, $tipo, $nome_grupo){
 		}elseif($tipo == "C"){
 			$valor = ($numero_diarias*70) + ($adicional*35);
 		}
-	}elseif($nome_grupo == "IV"){
+	}elseif($nome_grupo == "IV" or $nome_grupo == "sem grupo"){
 		if($tipo == "A"){
 			$valor = ($numero_diarias*550) + ($adicional*275);
 		}elseif($tipo == "B1"){
@@ -1022,7 +1022,7 @@ function retorna_tipos_despesas($conexao_com_banco){
 
 function retorna_total_classificacao_informacao($mes, $ano, $conexao_com_banco){
 	
-	$resultado = mysqli_query($conexao_com_banco, "SELECT NR_TOTAL_PEDIDOS_CLASSIFICACAO_INFORMACAO FROM tb_lai_pedidos WHERE 	NR_MES=$mes AND NR_ANO='$ano'");
+	$resultado = mysqli_query($conexao_com_banco, "SELECT NR_TOTAL_PEDIDOS_CLASSIFICACAO_INFORMACAO FROM tb_lai_pedidos WHERE NR_MES=$mes AND NR_ANO='$ano'");
 	$valor = mysqli_fetch_row($resultado);
 	
 	return $valor[0];		
@@ -1030,15 +1030,43 @@ function retorna_total_classificacao_informacao($mes, $ano, $conexao_com_banco){
 
 function retorna_total_classificacao_informacao_orgao($mes, $ano, $orgao, $conexao_com_banco){
 	
-	$resultado = mysqli_query($conexao_com_banco, "SELECT NR_TOTAL_PEDIDOS_CLASSIFICACAO_INFORMACAO FROM tb_lai_pedidos WHERE '$orgao'=ID_ORGAO AND '$ano'=
-	AND 'mes'=NR_MES");	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT NR_TOTAL_PEDIDOS_CLASSIFICACAO_INFORMACAO FROM tb_lai_pedidos WHERE '$orgao'=ID_ORGAO AND NR_ANO='$ano' AND NR_MES='$mes'");	
+	
 	$valor = mysqli_fetch_row($resultado);
 	
 	return $valor[0];
 	
 }
 
+//Funções de cidades
+function retorna_estados_cidades($conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT e.UF_ESTADO, c.ID, c.NM_CIDADE FROM tb_cidades c, tb_estados e WHERE c.ID_ESTADO = e.ID ORDER BY UF_ESTADO, NM_CIDADE");	
 
+	return $resultado;
+	
+	
+}
 
+function retorna_nome_cidade($id, $conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT NM_CIDADE FROM tb_cidades WHERE ID='$id'");	
+
+	$nome = mysqli_fetch_row($resultado);
+	
+	return $nome[0];
+	
+}
+
+//Funções de estados
+function retorna_uf_estado_cidade($cidade, $conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT e.UF_ESTADO FROM tb_cidades c, tb_estados e WHERE c.ID_ESTADO = e.ID AND c.ID='$cidade'");	
+
+	$uf = mysqli_fetch_row($resultado);
+	
+	return $uf[0];
+	
+}
 
 ?>

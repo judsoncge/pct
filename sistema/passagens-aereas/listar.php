@@ -26,7 +26,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_PASSAGENS_AEREAS", $
 								</div>
 								<div class="col-sm-2 pull-right">
 									<a href="cadastrar.php" id="botao-cadastrar">
-									<i class="fa fa-plus-circle"></i> Nova Passagem</a>
+									<i class="fa fa-plus-circle"></i> Passagem</a>
 								</div>
 							</div>
 						<?php } else{ ?>
