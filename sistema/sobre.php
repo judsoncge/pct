@@ -19,24 +19,30 @@ include('body.php');
 			</div>
 			<center><p style="font-size: 20pt;">Equipe</p>	
 				<div class="row">
-					<div class='col-md-4'>
+					<div class='col-md-3'>
 						<div class='box-equipe'>
 							<img src='../registros/fotos-equipe/clara.png' class='equipe-img'>
 						</div>
 						<div class='equipe_servidor'><b>Maria Clara Bugarim</b><br>Apoio</div>
 					</div>
-					<div class='col-md-4'>
+					<div class='col-md-3'>
 						<div class='box-equipe'>
 							<img src='../registros/fotos-equipe/thiago.png' class='equipe-img'>
 						</div>
 						<div class='equipe_servidor'><b>Thiago Paiva</b><br>Coordenador</div>
 					</div>
-					<div class='col-md-4'>
+					<div class='col-md-3'>
 						<div class='box-equipe'>
 							<img src='../registros/fotos-equipe/judson.png' class='equipe-img'>
 						</div>
 						<div class='equipe_servidor'><b>Judson Bandeira</b><br>Analista de TI</div>
-					</div>		
+					</div>
+					<div class='col-md-3'>
+						<div class='box-equipe'>
+							<img src='../registros/fotos-equipe/vilker.jpg' class='equipe-img'>
+						</div>
+						<div class='equipe_servidor'><b>Vilker Tenório</b><br>Analista de TI</div>
+					</div>	
 				</div>
 			</center>				
 		</div>

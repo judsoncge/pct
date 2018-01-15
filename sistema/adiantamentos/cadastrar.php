@@ -33,18 +33,18 @@ include("../includes/verificacao-permissao.php");
 										<label class="control-label" for="exampleInputEmail1">Data do recebimento</label>
 										<input class="form-control" id="data_recebimento" name="data_recebimento" type="date" required />	  
 									</div> 
+								</div>								
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de prestação de contas</label>
+										<input class="form-control" id="data_prestacao_contas" name="data_prestacao_contas" type="date" required />	  
+									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Ordem bancária</label>
 										<input class="form-control" id="ordem_bancaria" name="ordem_bancaria" placeholder="Digite a ordem bancária" type="text" maxlength="255" required />				  
 									</div>				
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de prestação de contas</label>
-										<input class="form-control" id="data_prestacao_contas" name="data_prestacao_contas" type="date" required />	  
-									</div> 
 								</div>
 							</div>
 							<div class="row">

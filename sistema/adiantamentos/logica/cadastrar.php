@@ -10,8 +10,6 @@ $beneficiario = $_POST["beneficiario"];
 
 $orgao = retorna_orgao_servidor($beneficiario, $conexao_com_banco);
 
-$data_recebimento = $_POST["data_recebimento"];
-
 $ordem_bancaria = strtoupper($_POST["ordem_bancaria"]);
 
 $valor_material = $_POST["valor_material"];
@@ -24,7 +22,17 @@ $valor_recebido = $valor_material + $valor_pf + $valor_pj;
 
 $valor_devolvido = $_POST["valor_devolvido"];
 
+$data_recebimento = $_POST["data_recebimento"];
+
 $data_prestacao_contas = $_POST["data_prestacao_contas"];
+
+$v_datas = validar_datas_adiantamento($data_recebimento, $data_prestacao_contas);
+
+if($v_datas!=""){
+	echo "<script>alert('$v_datas')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
 
 $data_ultima_atualizacao = Date("Y-m-d");
 

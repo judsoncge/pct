@@ -611,6 +611,23 @@ function validar_datas_diaria($data_publicacao, $data_inicio, $data_termino, $da
 
 }
 
+
+//Funções de adiantamentos
+
+function validar_datas_adiantamento($data_recebimento, $data_prestacao_contas){
+		
+	$mensagem = "";	
+		
+	if($data_recebimento > $data_prestacao_contas){
+		$mensagem = "A data de recebimento não pode ser maior que a data de prestação de contas";	
+	}
+	
+	return $mensagem;
+
+}
+
+
+
 //Funções de grupos
 
 
