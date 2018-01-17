@@ -18,12 +18,12 @@ $p = retorna_permissao_servidor($_SESSION["id"], "GERENCIAR_CORREICAO", $conexao
 					<div class="well">
 						<?php if($p){ ?>	
 							<div class="row">
-								<div class="col-sm-10">
+								<div class="col-sm-9">
 									<div class="input-group margin-bottom-sm">
 										<span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span> <input type="text" class="input-search form-control" alt="tabela-dados" placeholder="Buscar pelo órgão, portaria, decreto e penalidade" id="search" autofocus="autofocus" />
 									</div>
 								</div>
-								<div class="col-sm-2 pull-right">
+								<div class="col-sm-3 pull-right">
 									<a href="cadastrar.php" id="botao-cadastrar">
 									<i class="fa fa-plus-circle"></i> Nova Correição</a>
 								</div>

@@ -27,7 +27,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de Publicação da Portaria</label>
+										<label class="control-label" for="exampleInputEmail1">Data da portaria no DOE-AL</label>
 										<input class="form-control" id="data_portaria" name="data_portaria" type="date" value="<?php echo $informacoes["DT_PUBLICACAO_PORTARIA"] ?>" required />	  
 									</div> 
 								</div>
@@ -63,13 +63,13 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Número do Decreto</label>
+										<label class="control-label" for="exampleInputEmail1">Número do decreto</label>
 										<input class="form-control" id="numero_decreto" name="numero_decreto" placeholder="Digite o numero do decreto" type="text" maxlength="255" value="<?php echo $informacoes["NM_NUMERO_DECRETO"] ?>" required />				  
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de Publicação do Decreto</label><input class="form-control" id="data_decreto" name="data_decreto" type="date" value="<?php echo $informacoes["DT_PUBLICACAO_DECRETO"] ?>" required />	  
+										<label class="control-label" for="exampleInputEmail1">Data do decreto no DOE-AL</label><input class="form-control" id="data_decreto" name="data_decreto" type="date" value="<?php echo $informacoes["DT_PUBLICACAO_DECRETO"] ?>" required />	  
 									</div> 
 								</div>
 							</div>
@@ -99,6 +99,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Cargo Ocupado</label>
+										<a href="../servidores/cadastrar2.php">cadastrar novo</a>
 										<select class="form-control" id="cargo" name="cargo" required />
 											<option value="<?php echo $informacoes["NM_CARGO_OCUPADO"] ?>"><?php echo $informacoes["NM_CARGO_OCUPADO"] ?></option>
 											<?php $lista = retorna_cargos_orgao($_SESSION["orgao"], $conexao_com_banco);

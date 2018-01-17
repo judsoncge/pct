@@ -1,7 +1,7 @@
 <?php
 
 function cadastrar_correicao($conexao_com_banco, $orgao, $numero_portaria, $data_portaria, $tipo_procedimento, $processo, $data_instauracao, $situacao, $numero_decreto, $data_decreto, $penalidade, $motivo, $cargo, $data_ultima_atualizacao, $servidor_atualizou){
-	mysqli_query($conexao_com_banco, "INSERT INTO tb_correicao VALUES ('a', '$orgao', '$numero_portaria', '$data_portaria', '$tipo_procedimento', '$processo', '$data_instauracao', '$situacao', '$numero_decreto', '$data_decreto', '$penalidade', '$motivo', '$cargo', '$data_ultima_atualizacao', '$servidor_atualizou')") or die(mysqli_error($conexao_com_banco));	
+	mysqli_query($conexao_com_banco, "INSERT INTO tb_correicao VALUES ('a', '$orgao', '$numero_portaria', '$data_portaria', '$tipo_procedimento', '$processo', '$data_instauracao', '$situacao', '$numero_decreto', '$data_decreto', '$penalidade', '$motivo', '$cargo', '$data_ultima_atualizacao', '$servidor_atualizou', 'ATIVO')") or die(mysqli_error($conexao_com_banco));	
 	
 }
 
@@ -13,7 +13,7 @@ function editar_correicao($conexao_com_banco, $orgao, $numero_portaria, $data_po
 
 function excluir_correicao($conexao_com_banco, $id){
 	
-	mysqli_query($conexao_com_banco, "DELETE FROM tb_correicao WHERE ID='$id'") or die(mysqli_error($conexao_com_banco));	
+	mysqli_query($conexao_com_banco, "UPDATE tb_correicao SET NM_STATUS='INATIVO'") or die(mysqli_error($conexao_com_banco));	
 	
 }
 

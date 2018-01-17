@@ -7,6 +7,7 @@ jQuery(function($){
 	$("#numero_contrato_siafi").mask("999999999/9999");
 	$("#placa").mask("aaa-9999");
 	$("#ano_veiculo").mask("9999/9999");	
+	$("#numero_portaria").mask("9999/9999");	
 });
 
 

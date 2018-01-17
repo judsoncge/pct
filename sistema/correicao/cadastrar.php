@@ -23,7 +23,7 @@ include("../includes/verificacao-permissao.php");
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de Publicação da Portaria</label>
+										<label class="control-label" for="exampleInputEmail1">Data da portaria no DOE-AL</label>
 										<input class="form-control" id="data_portaria" name="data_portaria" type="date" required />	  
 									</div> 
 								</div>
@@ -59,13 +59,13 @@ include("../includes/verificacao-permissao.php");
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Número do Decreto</label>
+										<label class="control-label" for="exampleInputEmail1">Número do decreto</label>
 										<input class="form-control" id="numero_decreto" name="numero_decreto" placeholder="Digite o numero do decreto" type="text" maxlength="255" required />				  
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de Publicação do Decreto</label><input class="form-control" id="data_decreto" name="data_decreto" type="date" required />	  
+										<label class="control-label" for="exampleInputEmail1">Data do decreto no DOE-AL</label><input class="form-control" id="data_decreto" name="data_decreto" type="date" required />	  
 									</div> 
 								</div>
 							</div>
@@ -95,6 +95,7 @@ include("../includes/verificacao-permissao.php");
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Cargo Ocupado</label>
+										<a href="../servidores/cadastrar2.php">cadastrar novo</a>
 										<select class="form-control" id="cargo" name="cargo" required />
 											<option value="">Selecione o cargo</option>
 											<?php $lista = retorna_cargos_orgao($_SESSION["orgao"], $conexao_com_banco);
