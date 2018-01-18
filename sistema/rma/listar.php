@@ -48,7 +48,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_RMA", $conexao_com_b
 									<th><center>Órgão</center></th>									
 									<th><center>Classificação Contábil</center></th>
 									<th><center>Denominação</center></th>
-									<th><center>Saldo</center></th>	
+									<th><center>Saldo Atual</center></th>	
 									<th><center>Detalhes</center></th>
 									<?php if($p){ ?>	
 										<th><center>Ação</center></th>
@@ -83,7 +83,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_RMA", $conexao_com_b
 									</td>
 									<td>
 										<center>
-											<?php echo "R$ " . number_format($r->VL_SALDO, 2, ",", ".") ?>
+											<?php echo "R$ " . number_format($r->VL_SALDO_ATUAL,2, ",", ".") ?>
 										</center>
 									</td>									
 									<td>

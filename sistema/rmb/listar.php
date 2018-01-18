@@ -46,10 +46,9 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_RMB", $conexao_com_b
 							<thead>
 								<tr>
 									<th><center>Órgão</center></th>
-									<th><center>Tipo de Patrimônio</center></th>
-									<th><center>Classificação Contábil</center></th>
+									<th><center>Tipo de Patrimônio</center></th>									
 									<th><center>Denominação</center></th>
-									<th><center>Saldo</center></th>	
+									<th><center>Saldo Atual</center></th>	
 									<th><center>Detalhes</center></th>
 									<?php if($p){ ?>	
 										<th><center>Ação</center></th>
@@ -76,12 +75,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_RMB", $conexao_com_b
 										<center>
 											<?php echo $r->NM_TIPO_PATRIMONIO ?>
 										</center>
-									</td>
-									<td>
-										<center>
-											<?php echo retorna_classificacao_contabil_rmb($r->ID_CLASSIFICACAO_CONTABIL, $conexao_com_banco) ?>
-										</center>
-									</td>
+									</td>									
 									<td>
 										<center>
 											<?php echo retorna_denominacao_contabil_rmb($r->ID_CLASSIFICACAO_CONTABIL, $conexao_com_banco) ?>
@@ -89,7 +83,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_RMB", $conexao_com_b
 									</td>
 									<td>
 										<center>
-											<?php echo "R$ " . number_format($r->VL_SALDO, 2, ",", ".") ?>
+											<?php echo "R$ " . number_format($r->VL_SALDO_ATUAL,2, ",", ".") ?>
 										</center>
 									</td>									
 									<td>

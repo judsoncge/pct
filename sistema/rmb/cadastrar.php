@@ -16,7 +16,7 @@ include('../includes/verificacao-permissao.php');
 				<div class="container">
 					<form name="cadastro" method="POST" action="logica/cadastrar.php" enctype="multipart/form-data"> 
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-md-2">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Tipo de Patrimônio</label>
 										<select class="form-control" id="tipo_patrimonio" name="tipo_patrimonio" required />
@@ -26,10 +26,10 @@ include('../includes/verificacao-permissao.php');
 										</select>
 									</div> 
 								</div>	
-								<div class="col-md-5">
+								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Denominação</label>
-										<select class="form-control" id="classificacao_contabil" name="classificacao_contabil" />
+										<select class="form-control" id="classificacao_contabil" name="classificacao_contabil" required />
 											<option value="">Selecione a denominação</option>
 											<?php $lista = retorna_denominacoes_contabeis_rmb($conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>
@@ -37,14 +37,8 @@ include('../includes/verificacao-permissao.php');
 											</option><?php } ?>
 										</select>
 									</div> 
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Saldo</label>
-										<input class="form-control" id="saldo" name="saldo" type="number" step="0.01" required />  
-									</div> 
-								</div>	
-								<div class="col-md-2">
+								</div>								
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Saldo Anterior</label>
 										<input class="form-control" id="saldo_anterior" name="saldo_anterior" type="number" step="0.01" required />  
@@ -52,30 +46,24 @@ include('../includes/verificacao-permissao.php');
 								</div>	
 							</div>
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Entradas</label>
 										<input class="form-control" id="entradas" name="entradas" type="number" step="0.01" required />  
 									</div> 
 								</div>	
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Entradas Extras</label>
 										<input class="form-control" id="entradas_extras" name="entradas_extras" type="number" step="0.01" required />  
 									</div> 
 								</div>	
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Saídas</label>
 										<input class="form-control" id="saidas" name="saidas" type="number" step="0.01" required />  
 									</div> 
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Saldo Atual</label>
-										<input class="form-control" id="saldo_atual" name="saldo_atual" type="number" step="0.01" required />  
-									</div> 
-								</div>
+								</div>								
 							</div>												
 							<div class="row" id="cad-button">
 								<div class="col-md-12">

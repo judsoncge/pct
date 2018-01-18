@@ -32,12 +32,12 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<hr>							
 							<h2>INFORMAÇÕES DE VALORES</h2>
 							<hr>
-							<b>Saldo</b>: <?php echo "R$ " . number_format($informacoes["VL_SALDO"] , 2, ",", ".")?><br>
-							<b>Saldo Anterior</b>: <?php echo "R$ " . number_format($informacoes["VL_SALDO_ANTERIOR"] , 2, ",", ".")?><br>
-							<b>Entradas</b>: <?php echo "R$ " . number_format($informacoes["VL_ENTRADAS"] , 2, ",", ".")?><br>
-							<b>Entradas Extras</b>: <?php echo "R$ " . number_format($informacoes["VL_ENTRADAS_EXTRAS"] , 2, ",", ".")?><br>
-							<b>Saídas</b>: <?php echo "R$ " . number_format($informacoes["VL_SAIDAS"] , 2, ",", ".")?><br>
-							<b>Saldo Atual</b>: <?php echo "R$ " . number_format($informacoes["VL_SALDO_ATUAL"] , 2, ",", ".")?><br>
+							<b>Saldo Anterior</b>: <?php echo "R$ " . number_format($informacoes["VL_SALDO_ANTERIOR"],2, ",", ".") ?><br>
+							<b>Entradas</b>: <?php echo "R$ " . number_format($informacoes["VL_ENTRADAS"],2, ",", ".") ?><br>
+							<b>Entradas Extras</b>: <?php echo "R$ " . number_format($informacoes["VL_ENTRADAS_EXTRAS"],2, ",", ".") ?><br>
+							<b>Saídas</b>: <?php echo "R$ " . number_format($informacoes["VL_SAIDAS"],2, ",", ".") ?><br>
+							<b>Saldo Atual</b>: <?php echo "R$ " . number_format($informacoes["VL_SALDO_ATUAL"],2, ",", ".") ?><br>						
+							<br>
 						</div>
 					</div>
 					

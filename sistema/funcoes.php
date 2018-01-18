@@ -773,7 +773,7 @@ function validar_cessao_veiculo($orgao_cedido, $termo_cessao){
 
 
 
-//Funções de classificação contábil rmb
+//Funções de rmb
 
 
 function retorna_classificacao_contabil_rmb($id, $conexao_com_banco){
@@ -804,7 +804,20 @@ function retorna_denominacoes_contabeis_rmb($conexao_com_banco){
 	
 }
 
-//Funções de classificação contábil rma
+function validar_saldo_rmb($saldo_anterior, $entradas, $entradas_extras, $saidas){
+		
+	$mensagem = "";	
+		
+	if($saidas > ($saldo_anterior + $entradas + $entradas_extras)){
+		$mensagem = "O valor de saída não pode ser maior que o saldo atual (saldo anterior + entradas + entradas extras)";	
+	}	
+	
+	return $mensagem;
+
+}
+
+
+//Funções de rma
 
 
 function retorna_classificacao_contabil_rma($id, $conexao_com_banco){
@@ -833,6 +846,18 @@ function retorna_denominacoes_contabeis_rma($conexao_com_banco){
 	
 	return $resultado;
 	
+}
+
+function validar_saldo_rma($saldo_anterior, $entradas, $entradas_extras, $saidas){
+		
+	$mensagem = "";	
+		
+	if($saidas > ($saldo_anterior + $entradas + $entradas_extras)){
+		$mensagem = "O valor de saída não pode ser maior que o saldo atual (saldo anterior + entradas + entradas extras)";	
+	}	
+	
+	return $mensagem;
+
 }
 
 //Funções de uf
