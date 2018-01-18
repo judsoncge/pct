@@ -19,16 +19,11 @@ include('../includes/verificacao-permissao.php');
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Equipamento</label>
-										<select class="form-control" id="equipamento" name="equipamento" required />
+										<select class="form-control" id="equipamento" name="equipamento" />
 											<option value="">Selecione o equipamento</option>
-											<option value="COMPUTADOR">Computador</option>
-											<option value="NOTEBOOK">Notebook</option>
-											<option value="MONITOR">Monitor</option>
-											<option value="ESTABILIZADOR">Estabilizador</option>
-											<option value="IMPRESSORA">Impressora</option>
-											<option value="SCANNER">Scanner</option>
-											<option value="SWITCH">Switch</option>
-											<option value="ROTEADOR">Roteador</option>
+											<?php $lista = retorna_equipamentos($conexao_com_banco);
+											while($r = mysqli_fetch_object($lista)){ ?>
+											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_EQUIPAMENTO ?></option><?php } ?>
 										</select>
 									</div> 
 								</div>

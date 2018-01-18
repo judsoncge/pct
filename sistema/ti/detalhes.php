@@ -12,7 +12,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 <!-- Conteúdo da Página -->
 <div id="page-content-wrapper">
 	<div class="container titulo-pagina">				
-		<p><?php echo $informacoes["NM_EQUIPAMENTO"] ?> em <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?></p>		
+		<p><?php echo retorna_nome_equipamento($informacoes["ID_EQUIPAMENTO"], $conexao_com_banco)  ?> em <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?></p>		
 	</div>
 	
 	<div class="container caixa-conteudo">
@@ -31,11 +31,14 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?><br>
 							
 							<b>Equipamento</b>:       
-							<?php echo $informacoes["NM_EQUIPAMENTO"] ?><br>
+							<?php echo retorna_nome_equipamento($informacoes["ID_EQUIPAMENTO"], $conexao_com_banco)  ?><br>
 								
 							<hr>
 							<h2>INFORMAÇÕES DE QUANTIDADE E CESSÃO</h2>
 							<hr>
+							
+							<b>Quantidade Total</b>:       
+							<?php echo ($informacoes["NR_QUANTIDADE_PROPRIO"] +  $informacoes["NR_QUANTIDADE_ALUGADO"] + $informacoes["NR_QUANTIDADE_RECEBIDO"] + $informacoes["NR_QUANTIDADE_CEDIDO"])-$informacoes["NR_QUANTIDADE_CEDIDO"]  ?><br>
 							
 							<b>Quantidade Próprio</b>:       
 							<?php echo $informacoes["NR_QUANTIDADE_PROPRIO"] ?><br>
@@ -43,14 +46,14 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Quantidade Alugado</b>:       
 							<?php echo $informacoes["NR_QUANTIDADE_ALUGADO"] ?><br>
 							
+							<b>Quantidade Recebido</b>:       
+							<?php echo $informacoes["NR_QUANTIDADE_RECEBIDO"] ?><br>
+							
 							<b>Quantidade Cedido</b>:       
 							<?php echo $informacoes["NR_QUANTIDADE_CEDIDO"] ?><br>
 							
 							<b>Órgão Cedido</b>:       
 							<?php echo retorna_sigla_orgao($informacoes["ID_ORGAO_CEDIDO"], $conexao_com_banco) ?><br>
-							
-							<b>Quantidade Recebido</b>:       
-							<?php echo $informacoes["NR_QUANTIDADE_RECEBIDO"] ?><br>
 							
 							<b>Órgão Origem</b>:       
 							<?php echo retorna_sigla_orgao($informacoes["ID_ORGAO_ORIGEM"], $conexao_com_banco) ?><br>

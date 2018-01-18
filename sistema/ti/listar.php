@@ -59,9 +59,9 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_TI", $conexao_com_ba
 								<?php 
 								$o = retorna_permissao_servidor($_SESSION['id'], "VISAO_TODOS_ORGAOS", $conexao_com_banco); 
 								if($o){
-									$lista = retorna_dados_componente("tb_ti", "NM_EQUIPAMENTO", $conexao_com_banco);
+									$lista = retorna_dados_componente("tb_ti", "ID_EQUIPAMENTO", $conexao_com_banco);
 								}else{
-									$lista = retorna_dados_componente_orgao("tb_ti", "NM_EQUIPAMENTO", $_SESSION["orgao"], $conexao_com_banco);
+									$lista = retorna_dados_componente_orgao("tb_ti", "ID_EQUIPAMENTO", $_SESSION["orgao"], $conexao_com_banco);
 								}
 								while($r = mysqli_fetch_object($lista)){ $id = $r->ID ?>
 								
@@ -73,7 +73,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_TI", $conexao_com_ba
 									</td>
 									<td>
 										<center>
-											<?php echo $r->NM_EQUIPAMENTO ?>
+											<?php echo retorna_nome_equipamento($r->ID_EQUIPAMENTO, $conexao_com_banco) ?>
 										</center>
 									</td>
 									<td>

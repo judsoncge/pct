@@ -1139,4 +1139,25 @@ function validar_datas_passagens_aereas($data_ida, $data_volta, $data_prestacao_
 	
 }
 
+
+//Funções de equipamentos
+function retorna_equipamentos($conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM tb_ti_equipamentos");	
+
+	return $resultado;	
+	
+}
+
+function retorna_nome_equipamento($id, $conexao_com_banco){
+	
+	$resultado = mysqli_query($conexao_com_banco, "SELECT NM_EQUIPAMENTO FROM tb_ti_equipamentos WHERE ID='$id'");	
+
+	$nome = mysqli_fetch_row($resultado);
+	
+	return $nome[0];
+	
+	
+	
+}
 ?>

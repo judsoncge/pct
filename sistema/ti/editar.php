@@ -12,7 +12,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 <!-- Conteúdo da Página -->
 <div id="page-content-wrapper">
 	<div class="container titulo-pagina">
-		<p>Edição de <?php echo $informacoes["NM_EQUIPAMENTO"] ?> em <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?></p>
+		<p>Edição de <?php echo retorna_nome_equipamento($informacoes["ID_EQUIPAMENTO"], $conexao_com_banco)  ?> em <?php echo retorna_sigla_orgao($informacoes["ID_ORGAO"], $conexao_com_banco) ?></p>
 	</div>
 	<div class="container caixa-conteudo">
 		<div class="row">
@@ -23,16 +23,11 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Equipamento</label>
-										<select class="form-control" id="equipamento" name="equipamento" required />
-											<option value="<?php echo $informacoes["NM_EQUIPAMENTO"] ?>"><?php echo $informacoes["NM_EQUIPAMENTO"] ?></option>
-											<option value="COMPUTADOR">Computador</option>
-											<option value="NOTEBOOK">Notebook</option>
-											<option value="MONITOR">Monitor</option>
-											<option value="ESTABILIZADOR">Estabilizador</option>
-											<option value="IMPRESSORA">Impressora</option>
-											<option value="SCANNER">Scanner</option>
-											<option value="SWITCH">Switch</option>
-											<option value="ROTEADOR">Roteador</option>
+										<select class="form-control" id="equipamento" name="equipamento" />
+											<option value="<?php echo $informacoes['ID_EQUIPAMENTO']?>"><?php echo retorna_nome_equipamento($informacoes['ID_EQUIPAMENTO'], $conexao_com_banco);?></option>
+											<?php $lista = retorna_equipamentos($conexao_com_banco);
+											while($r = mysqli_fetch_object($lista)){ ?>
+											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_EQUIPAMENTO ?></option><?php } ?>
 										</select>
 									</div> 
 								</div>
@@ -60,7 +55,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Órgão Cedido</label>
 										<select class="form-control" id="orgao_cedido" name="orgao_cedido" />
-											<option value="<?php echo $informacoes["ID_ORGAO_CEDIDO"] ?>"><?php echo $informacoes["ID_ORGAO_CEDIDO"] ?></option>
+											<option value="<?php echo $informacoes["ID_ORGAO_CEDIDO"] ?>"><?php echo retorna_nome_orgao($informacoes["ID_ORGAO_CEDIDO"], $conexao_com_banco) ?></option>
 											<?php $lista = retorna_orgaos($conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>
 											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_ORGAO ?></option><?php } ?>
@@ -77,7 +72,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Órgão Origem</label>
 										<select class="form-control" id="orgao_recebido" name="orgao_recebido" />
-											<option value="<?php echo $informacoes["ID_ORGAO_ORIGEM"] ?>"><?php echo $informacoes["ID_ORGAO_ORIGEM"] ?></option>
+											<option value="<?php echo $informacoes["ID_ORGAO_ORIGEM"] ?>"><?php echo retorna_nome_orgao($informacoes["ID_ORGAO_ORIGEM"], $conexao_com_banco) ?></option>
 											<?php $lista = retorna_orgaos($conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>
 											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_ORGAO ?></option><?php } ?>
@@ -95,7 +90,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							</div>
 							<div class="row" id="cad-button">
 								<div class="col-md-12">
-									<button type="submit" class="btn btn-default" name="submit" value="Send" id="submit">Cadastrar</button>
+									<button type="submit" class="btn btn-default" name="submit" value="Send" id="submit">Editar</button>
 								</div>
 							</div>
 						</form>
