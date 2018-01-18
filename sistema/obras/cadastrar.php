@@ -55,14 +55,20 @@ include('../includes/verificacao-permissao.php');
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Status da Obra</label>
-										<input class="form-control" id="status" name="status" placeholder="Digite o status da obra" type="text" maxlength="255" required />				  
+										<label class="control-label" for="exampleInputEmail1">Situação da Obra</label>
+										<select class="form-control" id="situacao" name="situacao" required/>
+											<option value="">Selecione a situação</option>
+											<option value="A INICIAR">A INICIAR</option>
+											<option value="EM ANDAMENTO">EM ANDAMENTO</option>
+											<option value="ATRASADO">ATRASADO</option>
+											<option value="CONCLUIDO">CONCLUIDO</option>
+										</select>				  
 									</div>			
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Percentual de Execução da Obra</label>
-										<input class="form-control" id="percentual_execucao" name="percentual_execucao" placeholder="Digite o percentual de execução" type="text" maxlength="255" required />				  
+										<input class="form-control" id="percentual_execucao" name="percentual_execucao" placeholder="Digite o percentual de execução" type="number" maxlength="3" min="0" max="100" required />				  
 									</div>	
 								</div>
 							</div>
@@ -82,7 +88,7 @@ include('../includes/verificacao-permissao.php');
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número de Contrato</label>
-										<select class="form-control" id="id_contrato" name="id_contrato" />
+										<select class="form-control" id="id_contrato" name="id_contrato" required />
 											<option value="">Selecione o contrato</option>
 											<?php $lista = retorna_numero_contratos_orgao($_SESSION["orgao"], $conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>

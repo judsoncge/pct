@@ -1160,4 +1160,20 @@ function retorna_nome_equipamento($id, $conexao_com_banco){
 	
 	
 }
+
+//Funções de obras
+function validar_datas_obra($data_inicio, $data_termino, $data_referencia){
+	
+	$mensagem = "";	
+		
+	if($data_termino < $data_inicio){
+		$mensagem = "A data de termino nao pode ser menor que a data de inicio";	
+	}elseif($data_termino < data_referencia or $data_inicio > data_referencia){
+		$mensagem = "A data de referencia deve estar entre a data de inicio e termino da obra";
+	}
+	
+	return $mensagem;
+	
+	
+}
 ?>

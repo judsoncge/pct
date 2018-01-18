@@ -27,21 +27,33 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							
 							<h2>INFORMAÇÕES DA OBRA</h2>
 							<hr>
-							<b>Denominação da obra</b>:         	<?php echo $informacoes["NM_DENOMINACAO_OBRA"] ?><br>
-							<b>Objeto</b>:            				<?php echo $informacoes["NM_OBJETO"] ?><br>
-							<b>Local</b>:             				<?php echo $informacoes["NM_LOCAL"] ?><br>
-							<b>Data de início</b>:          		<?php echo date_format(new DateTime($informacoes["DT_INICIO"]), 'd/m/Y') ?><br>
-							<b>Data prevista para término</b>:  	<?php echo date_format(new DateTime($informacoes["DT_TERMINO"]), 'd/m/Y') ?><br>
-							<b>Status da obra</b>:              	<?php echo $informacoes["NM_STATUS"] ?><br>
-							<b>Percentual de execução da obra</b>:	<?php echo $informacoes["NM_PERCENTUAL_EXECUCAO"] ?><br>
-							<b>Data de referência</b>: 				<?php echo $informacoes["DT_REFERENCIA_EXECUCAO"] ?><br> 
-							<b>Número do(s) contrato(s)</b>:		<?php echo retorna_numero_contrato($informacoes["ID_CONTRATO"], $conexao_com_banco) ?><br>
-							<b>Valor da obra</b>: 					<?php echo "R$ " . number_format($informacoes["VL_OBRA"] , 2, ",", ".")?><br>
+							<b>Denominação da obra</b>:
+								<?php echo $informacoes["NM_DENOMINACAO_OBRA"] ?><br>
+							<b>Objeto</b>:            				
+								<?php echo $informacoes["NM_OBJETO"] ?><br>
+							<b>Local</b>:             				
+								<?php echo $informacoes["NM_LOCAL"] ?><br>
+							<b>Data de início</b>:          		
+								<?php echo date_format(new DateTime($informacoes["DT_INICIO"]), 'd/m/Y') ?><br>
+							<b>Data prevista para término</b>:  	
+								<?php echo date_format(new DateTime($informacoes["DT_TERMINO"]), 'd/m/Y') ?><br>
+							<b>Status da obra</b>:              	
+								<?php echo $informacoes["NM_SITUACAO"] ?><br>
+							<b>Percentual de execução da obra</b>:	
+								<?php echo $informacoes["NR_PERCENTUAL_EXECUCAO"] ?>%<br>
+							<b>Data de referência</b>: 				
+								<?php echo date_format(new DateTime($informacoes["DT_REFERENCIA_EXECUCAO"]), 'd/m/Y') ?><br> 
+							<b>Número do(s) contrato(s)</b>:		
+								<?php echo retorna_numero_contrato($informacoes["ID_CONTRATO"], $conexao_com_banco) ?><br>
+							<b>Valor da obra</b>: 					
+								<?php echo "R$ " . number_format($informacoes["VL_OBRA"] , 2, ",", ".")?><br>
 							<hr>							
 							<h2>OUTRAS INFORMAÇÕES</h2>
 							<hr>
-							<b>Beneficiários</b>:    	<?php echo $informacoes["NM_BENEFICIARIOS"] ?><br>							
-							<b>Origem dos Recursos</b>: <?php echo $informacoes["NM_ORIGEM_RECURSOS"] ?><br>
+							<b>Beneficiários</b>:    	
+								<?php echo $informacoes["NM_BENEFICIARIOS"] ?><br>							
+							<b>Origem dos Recursos</b>: 
+							]	<?php echo $informacoes["NM_ORIGEM_RECURSOS"] ?><br>
 						</div>
 					</div>
 					

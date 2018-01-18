@@ -61,14 +61,20 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Status da Obra</label>
-										<input class="form-control" id="status" name="status" placeholder="Digite o status da obra" type="text" maxlength="255" value="<?php echo $informacoes["NM_STATUS"] ?>" required />				  
+										<label class="control-label" for="exampleInputEmail1">Situação da Obra</label>
+										<select class="form-control" id="situacao" name="situacao" required/>
+											<option value="<?php echo $informacoes["NM_SITUACAO"] ?>"><?php echo $informacoes["NM_SITUACAO"] ?></option>
+											<option value="A INICIAR">A INICIAR</option>
+											<option value="EM ANDAMENTO">EM ANDAMENTO</option>
+											<option value="ATRASADO">ATRASADO</option>
+											<option value="CONCLUIDO">CONCLUIDO</option>
+										</select>				  
 									</div>			
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Percentual de Execução da Obra</label>
-										<input class="form-control" id="percentual_execucao" name="percentual_execucao" placeholder="Digite o percentual de execução" type="text" maxlength="255" value="<?php echo $informacoes["NM_PERCENTUAL_EXECUCAO"] ?>" required />				  
+										<input class="form-control" id="percentual_execucao" name="percentual_execucao" placeholder="Digite o percentual de execução" type="number" maxlength="3" min="0" max="100" value="<?php echo $informacoes["NR_PERCENTUAL_EXECUCAO"] ?>" required />				  
 									</div>	
 								</div>
 							</div>
@@ -88,7 +94,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Número de Contrato</label>
-										<select class="form-control" id="id_contrato" name="id_contrato" />
+										<select class="form-control" id="id_contrato" name="id_contrato" required />
 											<option value="<?php echo $informacoes["ID_CONTRATO"] ?>"> 
 												<?php echo retorna_numero_contrato($informacoes["ID_CONTRATO"], $conexao_com_banco) ?>  
 											</option>

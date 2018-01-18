@@ -49,7 +49,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_OBRAS", $conexao_com
 									<th><center>Número do Contrato</center></th>
 									<th><center>Data de Início</center></th>
 									<th><center>Data de Término</center></th>									
-									<th><center>Status</center></th>
+									<th><center>Situação</center></th>
 									<th><center>Detalhes</center></th>
 									<?php if($p){ ?>	
 										<th><center>Ação</center></th>
@@ -89,7 +89,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_OBRAS", $conexao_com
 									</td>
 									<td>
 										<center>
-											<?php echo $r->NM_STATUS ?>											
+											<?php echo $r->NM_SITUACAO ?>											
 										</center>
 									</td>
 									<td>
