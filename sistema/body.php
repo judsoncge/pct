@@ -181,7 +181,14 @@
 					<li class="servidor-subitem">
 						<a href="<?php echo $ROOT ?>sistema/servidores/cadastrar.php"><i class="fa fa-user-plus icone-menu" aria-hidden="true"></i>Novo servidor</a>
 					</li>
-				<?php } ?>		
+				<?php } ?>
+			
+			<?php $p = retorna_permissao_servidor($_SESSION['id'], "DEFINIR_PERMISSAO_CADASTRO", $conexao_com_banco); if($p){ ?>
+				<li id="servidores">
+					<a href="<?php echo $ROOT ?>sistema/permissao-cadastro/atualizar.php"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Definir Data de Cadastro</a>
+				</li>
+			<?php } ?>
+							
 			<li>
 				<a href="<?php echo $ROOT ?>sistema/sobre.php"><i class="fa fa-info-circle icone-menu" aria-hidden="true"></i>Sobre</a>
 			</li>
