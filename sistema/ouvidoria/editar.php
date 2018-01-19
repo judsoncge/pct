@@ -43,11 +43,11 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<label class="control-label" for="exampleInputEmail1">Tipo da Manifestação</label>
 										<select class="form-control" id="tipo_manifestacao" name="tipo_manifestacao" required />
 											<option value="<?php echo $informacoes["NM_TIPO_MANIFESTACAO"] ?>"><?php echo $informacoes["NM_TIPO_MANIFESTACAO"] ?></option>
-											<option value="SOLICITACAO DE PROVIDENCIA">Solicitação de Providência</option>
-											<option value="RECLAMACAO">Reclamação</option>
-											<option value="DENUNCIA">Denúncia</option>
-											<option value="SUGESTAO">Sugestão</option>
-											<option value="ELOGIO">Elogio</option>
+											<option value="SOLICITACAO DE PROVIDENCIA">SOLICITACAO DE PROVIDENCIA</option>
+											<option value="RECLAMACAO">RECLAMACAO</option>
+											<option value="DENUNCIA">DENUNCIA</option>
+											<option value="SUGESTAO">SUGESTAO</option>
+											<option value="ELOGIO">ELOGIO</option>
 										</select>
 									</div> 
 								</div>							
@@ -70,9 +70,9 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<label class="control-label" for="exampleInputEmail1">Canal de Recebimento</label>
 										<select class="form-control" id="canal" name="canal" required />
 											<option value="<?php echo $informacoes["NM_CANAL_RECEBIMENTO_MANIFESTACAO"] ?>"><?php echo $informacoes["NM_CANAL_RECEBIMENTO_MANIFESTACAO"] ?></option>
-											<option value="TELEFONE">Telefone</option>
-											<option value="ONLINE">Online</option>
-											<option value="PRESENCIAL">Presencial</option>
+											<option value="TELEFONE">TELEFONE</option>
+											<option value="E-MAIL">E-MAIL</option>
+											<option value="PRESENCIAL">PRESENCIAL</option>
 										</select>
 									</div> 
 								</div>	 	
@@ -81,8 +81,8 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 										<label class="control-label" for="exampleInputEmail1">Tipo de Pessoa</label>
 										<select class="form-control" id="tipo_pessoa" name="tipo_pessoa" required />
 											<option value="<?php echo $informacoes["NM_TIPO_PESSOA"] ?>"><?php echo $informacoes["NM_TIPO_PESSOA"] ?></option>
-											<option value="FISICA">Física</option>
-											<option value="JURIDICA">Jurídica</option>
+											<option value="FISICA">FISICA</option>
+											<option value="JURIDICA">JURIDICA</option>
 										</select>
 									</div> 
 								</div>							
@@ -90,13 +90,13 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data E-mail de confirmação</label>
+										<label class="control-label" for="exampleInputEmail1">Data E-mail de Confirmação</label>
 										<input class="form-control" id="data_email_confirmacao" name="data_email_confirmacao" type="date" value="<?php echo $informacoes["DT_EMAIL_CONFIRMACAO"] ?>" required />
 									</div> 
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data E-mail de resposta</label>
+										<label class="control-label" for="exampleInputEmail1">Data E-mail de Resposta</label>
 										<input class="form-control" id="data_email_resposta" name="data_email_resposta"  type="date" value="<?php echo $informacoes["DT_EMAIL_RESPOSTA"] ?>" required />
 									</div> 
 								</div>							
@@ -114,13 +114,9 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Situação Atual</label>
-										<select class="form-control" id="situacao" name="situacao" required />
-											<option value="<?php echo $informacoes["NM_SITUACAO"] ?>"><?php echo $informacoes["NM_SITUACAO"] ?></option>
-											<option value="OUVIDORIA">Ouvidoria</option>
-											<option value="AGUARDANDO RESPOSTA">Aguardando Resposta</option>
-										</select>
+										<input class="form-control" id="situacao" name="situacao" type="text" maxlength="255" value="<?php echo $informacoes["NM_SITUACAO"] ?>" required />	  
 									</div> 
-								</div>							
+								</div> 								
 							</div>
 							<div class="row" id="cad-button">
 								<div class="col-md-12">

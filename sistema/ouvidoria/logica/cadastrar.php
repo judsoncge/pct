@@ -28,9 +28,17 @@ $data_email_confirmacao = $_POST["data_email_confirmacao"];
 
 $data_email_resposta = $_POST["data_email_resposta"];
 
+$m = validar_datas_ouvidoria($data_recebimento, $data_abertura, $data_email_confirmacao, $data_email_resposta);
+
+if($m!=""){
+	echo "<script>alert('$m')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
+
 $orgao_vinculado = $_POST["orgao_vinculado"];
 
-$situacao = $_POST["situacao"];
+$situacao = strtoupper($_POST["situacao"]);
 
 $data_ultima_atualizacao = Date("Y-m-d");
 

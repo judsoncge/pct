@@ -24,6 +24,14 @@ $numero_decreto = $_POST["numero_decreto"];
 
 $data_decreto = $_POST["data_decreto"];
 
+$m = validar_datas_correicao($data_portaria, $data_instauracao, $data_decreto);
+
+if($m!=""){
+	echo "<script>alert('$m')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
+
 $penalidade = $_POST["penalidade"];
 
 $motivo = strtoupper($_POST["motivo"]);

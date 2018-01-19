@@ -1201,4 +1201,36 @@ function validar_datas_obra($data_inicio, $data_termino, $data_referencia){
 	
 	
 }
+
+//Funções de ouvidoria
+function validar_datas_ouvidoria($data_recebimento, $data_abertura, $data_email_confirmacao, $data_email_resposta){
+		
+	$mensagem = "";	
+		
+	if($data_recebimento > $data_abertura){
+		$mensagem = "A data de recebimento não pode ser maior que a data de abertura";	
+	}elseif($data_abertura > $data_email_confirmacao){
+		$mensagem = "A data de abertura não pode ser maior que a data de confirmação";
+	}elseif($data_email_confirmacao > $data_email_resposta){
+		$mensagem = "A data de confirmação não pode ser maior que a data de resposta";
+	}
+	
+	return $mensagem;
+
+}
+
+//Funções de correição
+function validar_datas_correicao($data_portaria, $data_instauracao, $data_decreto){
+		
+	$mensagem = "";	
+		
+	if($data_portaria > $data_instauracao){
+		$mensagem = "A data de portaria não pode ser maior que a data de instauração";	
+	}elseif($data_instauracao > $data_decreto){
+		$mensagem = "A data de instauração não pode ser maior que a data de decreto";
+	}
+	
+	return $mensagem;
+
+}
 ?>
