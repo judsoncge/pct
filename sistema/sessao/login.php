@@ -52,13 +52,18 @@ if($num_registros == 1){
 	
 	$data_hoje = Date("Y-m-d");
 	
+	if($data_inicial <= $data_hoje and $data_hoje <= $data_final){
+		$_SESSION['periodo-cadastro'] = true;
+	}else{
+		$_SESSION['periodo-cadastro'] = false;
+	}
+	
 	header("Location:../home.php");	
 
 
 }else{
-	$mensagem = "Usuário ou senha incorretos";
-	
+	header("Location:../../index.php?err=Usuário ou senha incorretos.");	
 }
-header("Location:../../index.php?err=$mensagem");
+
 
 ?>
