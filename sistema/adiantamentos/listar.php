@@ -16,7 +16,7 @@ $p = retorna_permissao_servidor($_SESSION["id"], "GERENCIAR_ADIANTAMENTOS", $con
 			<div class="col-lg-12">
 				<div class="container">
 					<div class="well">
-						<?php if($p){ ?>	
+						<?php if($p and $_SESSION["periodo-cadastro"]){ ?>	
 							<div class="row">
 								<div class="col-sm-9">
 									<div class="input-group margin-bottom-sm">
@@ -88,7 +88,7 @@ $p = retorna_permissao_servidor($_SESSION["id"], "GERENCIAR_ADIANTAMENTOS", $con
 											<a href="detalhes.php?id=<?php echo $id ?>">Ver detalhes</a>
 										</center>
 									</td>
-									<?php if($p){ ?>
+									<?php if($p and $_SESSION["periodo-cadastro"]){ ?>
 										<td>
 											<center>
 												

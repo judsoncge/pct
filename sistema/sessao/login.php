@@ -53,9 +53,9 @@ if($num_registros == 1){
 	$data_hoje = Date("Y-m-d");
 	
 	if($data_inicial <= $data_hoje and $data_hoje <= $data_final){
-		$_SESSION['periodo-cadastro'] = true;
+		$_SESSION["periodo-cadastro"] = true;
 	}else{
-		$_SESSION['periodo-cadastro'] = false;
+		$_SESSION["periodo-cadastro"] = false;
 	}
 	
 	header("Location:../home.php");	
