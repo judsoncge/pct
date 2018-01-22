@@ -18,8 +18,8 @@ include('../includes/verificacao-permissao.php');
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Número de Processo</label>
-										<input class="form-control" id="numero_processo" name="numero_processo" placeholder="Digite o número do processo" type="text" maxlength="255" required />				  
+										<label class="control-label" for="exampleInputEmail1">Número de Processo Integra</label>
+										<input class="form-control" id="processo" name="processo" placeholder="Digite o número do processo" type="text" maxlength="255" required />				  
 									</div>				
 								</div>
 								<div class="col-md-3">
@@ -33,9 +33,9 @@ include('../includes/verificacao-permissao.php');
 										<label class="control-label" for="exampleInputEmail1">Canal de Acesso</label>
 										<select class="form-control" id="canal_acesso" name="canal_acesso" required />
 											<option value="">Selecione</option>
-											<option value="FISICO">Físico</option>
-											<option value="TELEFONE">Telefone</option>
-											<option value="SITE">Site</option>
+											<option value="PRESENCIAL">PRESENCIAL</option>
+											<option value="E-MAIL">E-MAIL</option>
+											<option value="E-SIC">E-SIC</option>
 										</select>
 									</div> 
 								</div>	
@@ -46,46 +46,57 @@ include('../includes/verificacao-permissao.php');
 									</div>				
 								</div>
 							</div>
+							<strong><h4>Prazo</h4></strong>
+							<hr>
 							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de abertura do processo</label>
-										<input class="form-control" id="dt_abertura_processo" name="dt_abertura_processo" type="date" required />	  
-									</div> 
-								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data de recebimento da solicitação</label>
 										<input class="form-control" id="dt_recebimento_solicitacao" name="dt_recebimento_solicitacao" type="date" required />	  
 									</div> 
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de abertura do processo</label>
+										<input class="form-control" id="dt_abertura_processo" name="dt_abertura_processo" type="date" required />	  
+									</div> 
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Data de envio de resposta</label>
+										<input class="form-control" id="dt_envio_resposta" name="dt_envio_resposta" type="date" required />	  
+									</div> 
+								</div>																	
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="exampleInputEmail1">Prorrogação do prazo</label>
+										<select class="form-control" id="prorrogacao" name="prorrogacao" required />
+											<option value="">Selecione</option>
+											<option value="SIM">SIM</option>
+											<option value="NÃO">NÃO</option>											
+										</select>
+									</div> 
+								</div>
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data final para expedição de resposta</label>
 										<input class="form-control" id="dt_final_expedicao_resposta" name="dt_final_expedicao_resposta" type="date" required />	  
 									</div> 
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Prorrogação do prazo</label>
-										<input class="form-control" id="prorrogacao" name="prorrogacao" type="date" required />	  
-									</div> 
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Data de envio de resposta</label>
-										<input class="form-control" id="dt_envio_resposta" name="dt_envio_resposta" type="date" required />	  
-									</div> 
-								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Data final de recebimento de recurso</label>
 										<input class="form-control" id="dt_final_recebimento_recurso" name="dt_final_recebimento_recurso" type="date" required />	  
 									</div> 
 								</div>
-								<div class="col-md-3">
+								
+							</div>
+							<strong><h4>Características do Solicitante</h4></strong>
+							<hr>
+							<div class="row">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Tipo de pessoa do solicitante</label>
 										<select class="form-control" id="tipo_pessoa" name="tipo_pessoa" required />
@@ -95,24 +106,28 @@ include('../includes/verificacao-permissao.php');
 										</select>
 									</div> 
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Unidade Federativa do solicitante</label>
 										<select class="form-control" id="uf" name="uf" />
 											<option value="">Selecione a UF</option>
 											<?php $lista = retorna_ufs($conexao_com_banco);
 											while($r = mysqli_fetch_object($lista)){ ?>
-											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_NOME . " - " . $r->NM_SIGLA ?></option><?php } ?>
+											<option value="<?php echo $r->ID ?>"><?php echo $r->NM_ESTADO . " - " . $r->UF_ESTADO ?></option><?php } ?>
 										</select>
 									</div> 
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
+								</div>							
+								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Situação</label>
-										<input class="form-control" id="situacao" name="situacao" placeholder="Digite a situação do solicitante" type="text" maxlength="255" required />				  
-									</div>				
+										<select class="form-control" id="situacao" name="situacao" required />
+											<option value="">Selecione a situação</option>
+											<option value="ATENDIDO">ATENDIDO</option>
+											<option value="NEGADO">NEGADO</option>
+											<option value=" EM TRAMITAÇÃO">EM TRAMITAÇÃO</option>
+											<option value="REDIRECIONADO">REDIRECIONADO</option>
+										</select>
+									</div> 
 								</div>
 							</div>
 							<div class="row" id="cad-button">

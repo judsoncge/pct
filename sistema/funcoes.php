@@ -885,7 +885,7 @@ function validar_saldo_rma($saldo_anterior, $entradas, $entradas_extras, $saidas
 
 function retorna_ufs($conexao_com_banco){
 	
-	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM tb_uf");
+	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM tb_estados");
 
 	return $resultado;
 	
@@ -893,7 +893,7 @@ function retorna_ufs($conexao_com_banco){
 
 function retorna_uf($id, $conexao_com_banco){
 	
-	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM tb_uf WHERE ID='$id'");
+	$resultado = mysqli_query($conexao_com_banco, "SELECT * FROM tb_estados WHERE ID='$id'");
 
 	return $resultado;
 	
@@ -1117,6 +1117,39 @@ function retorna_tipos_despesas($conexao_com_banco){
 	return $resultado;
 	
 }
+
+
+//Funções de LAI
+
+function validar_prazo($dt_abertura_processo, $dt_recebimento_solicitacao, $dt_final_expedicao_resposta, $prorrogacao, $dt_envio_resposta, $dt_final_recebimento_recurso){
+	
+	$dt_abertura_mais_20 = date('Y-m-d', strtotime("+20 days",strtotime($dt_abertura_processo)));
+	$mensagem = "";	
+	$dt_abertura_mais_30 = date('Y-m-d', strtotime("+30 days",strtotime($dt_abertura_processo)));
+	$mensagem = "";	
+		
+	if($dt_recebimento_solicitacao > $dt_abertura_processo){
+		$mensagem = "A data de recebimento da solicitação não deve ser maior que a data de abertura do processo.";	
+	}
+	if($dt_abertura_processo > $dt_envio_resposta){
+		$mensagem = "A data de abertura do processo não deve ser maior que a data de envio de resposta.";	
+	}	
+	if(($prorrogacao == 'SIM') and ($dt_final_expedicao_resposta > $dt_abertura_mais_30)){		
+		$mensagem = "Em caso de prorrogação, a data final para expedição da resposta não deve ultrapassar 30 dias após a abertura do processo.";		
+	}
+	if(($prorrogacao == 'NÃO') and ($dt_final_expedicao_resposta > $dt_abertura_mais_20)){
+		$mensagem = "A data final para expedição da resposta não deve ultrapassar 20 dias após a abertura do processo.";		
+	}
+	if($dt_abertura_processo > $dt_final_recebimento_recurso){
+		$mensagem = "A data de abertura do processo não deve ser maior que a data final de recebimento de recurso.";		
+	}
+	
+	
+	return $mensagem;
+
+}
+
+
 
 //Funções de LAI Pedidos
 
