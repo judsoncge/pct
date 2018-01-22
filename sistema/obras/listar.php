@@ -17,7 +17,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_OBRAS", $conexao_com
 			<div class="col-lg-12">
 				<div class="container">
 					<div class="well">
-						<?php if($p){ ?>	
+						<?php if($p and $c){ ?>	
 							<div class="row">
 								<div class="col-sm-10">
 									<div class="input-group margin-bottom-sm">
@@ -51,7 +51,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_OBRAS", $conexao_com
 									<th><center>Data de Término</center></th>									
 									<th><center>Situação</center></th>
 									<th><center>Detalhes</center></th>
-									<?php if($p){ ?>	
+									<?php if($p and $c){ ?>	
 										<th><center>Ação</center></th>
 									<?php } ?>	
 								</tr>	
@@ -97,7 +97,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_OBRAS", $conexao_com
 											<a href="detalhes.php?id=<?php echo $id ?>">Ver detalhes</a>
 										</center>
 									</td>
-									<?php if($p){ ?>
+									<?php if($p and $c){ ?>
 										<td>
 											<center>
 												

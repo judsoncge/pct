@@ -8,6 +8,26 @@ $ROOT = ' http://'.$_SERVER['SERVER_NAME'].'/pct/';
 
 //Funções diversas
 
+function retorna_permissao_cadastro($orgao, $conexao_com_banco){
+	
+	$retornoquery = mysqli_query($conexao_com_banco, "SELECT DT_INICIAL_CADASTRO, DT_FINAL_CADASTRO FROM tb_orgaos WHERE ID='$orgao'");
+
+	$datas = mysqli_fetch_row($retornoquery);
+	
+	$data_inicial = $datas[0];
+	
+	$data_final = $datas[1];
+	
+	$data_hoje = Date("Y-m-d");
+	
+	if($data_inicial <= $data_hoje and $data_hoje <= $data_final){
+		return true;
+	}else{
+		return false;
+	}
+	
+}
+
 function retorna_data_datetime_local($tabela, $nome_campo_data, $id, $conexao_com_banco){
 	
 	$resultado = mysqli_query($conexao_com_banco, "SELECT DATE_FORMAT($nome_campo_data, '%Y-%m-%dT%H:%i') AS data FROM $tabela WHERE ID='$id'");	

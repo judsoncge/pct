@@ -17,7 +17,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_LAI_PEDIDOS", $conex
 			<div class="col-lg-12">
 				<div class="container">
 					<div class="well">
-						<?php if($p){ ?>	
+						<?php if($p and $c){ ?>	
 							<div class="row">
 								<div class="col-sm-10">
 									<div class="input-group margin-bottom-sm">
@@ -50,7 +50,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_LAI_PEDIDOS", $conex
 									<th><center>Total de Pedidos Atendidos</center></th>	
 									<th><center>Total de Pedidos Não Atendidos</center></th>	
 									<th><center>Detalhes</center></th>
-									<?php if($p){ ?>	
+									<?php if($p and $c){ ?>	
 										<th><center>Ação</center></th>
 									<?php } ?>	
 								</tr>	
@@ -91,7 +91,7 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_LAI_PEDIDOS", $conex
 											<a href="detalhes.php?id=<?php echo $id ?>">Ver detalhes</a>
 										</center>
 									</td>
-									<?php if($p){ ?>
+									<?php if($p and $c){ ?>
 										<td>
 											<center>
 												

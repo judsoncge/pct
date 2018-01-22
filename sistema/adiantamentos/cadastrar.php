@@ -1,5 +1,6 @@
 <?php 
-include("../head.php");include("../body.php");
+include("../head.php");
+include("../body.php");
 $permissao_verificar = "GERENCIAR_ADIANTAMENTOS";
 include("../includes/verificacao-permissao.php");
 ?>

@@ -2,6 +2,7 @@
 include("../head.php");include("../body.php");
 $permissao_verificar = "GERENCIAR_CONTRATOS";
 include("../includes/verificacao-permissao.php");
+
 ?>
 
 <!-- Conteúdo da Página -->

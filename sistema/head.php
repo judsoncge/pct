@@ -4,6 +4,7 @@
 		session_start();
 		include("banco-dados/conectar.php"); 
 		include("funcoes.php");
+		$c = retorna_permissao_cadastro($_SESSION["orgao"], $conexao_com_banco);
 		
 		if(!isset($_SESSION["numLogin"])){
 				$num = $_SESSION["numLogin"];

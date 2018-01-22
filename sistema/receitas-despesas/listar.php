@@ -53,7 +53,7 @@ if(!$o){
 					<div class="col-md-12 table-responsive" style="overflow: auto; width: 100%; padding: 20px 15px;">
 						<div class="row">
 							<div class="col-sm-6">
-								<h3>Receitas <?php if($p){ ?><a href="cadastrar-receita.php"><i class="fa fa-plus-circle"></i></a><?php } ?></h3>
+								<h3>Receitas <?php if($p and $c){ ?><a href="cadastrar-receita.php"><i class="fa fa-plus-circle"></i></a><?php } ?></h3>
 							</div>			
 						</div>
 							<table class="table table-hover tabela-dados tabela-fluxo">
@@ -103,7 +103,7 @@ if(!$o){
 					
 					<div class="col-md-12 table-responsive" style="overflow: auto; width: 100%; padding: 20px 15px;">
 						<h3>Despesas 
-							<?php if($p){ ?>
+							<?php if($p and $c){ ?>
 								<a href="cadastrar-despesa.php"><i class="fa fa-plus-circle"></i></a>
 							<?php } ?>
 						</h3>
