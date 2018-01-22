@@ -39,7 +39,7 @@ while($r = mysqli_fetch_object($lista)){
 
 
 if($quantidade_atualizados > 0){
-	Header("Location:../atualizar.php?mensagem=Operação realizada com sucesso! $quantidade_atualizados órgãos atualizados!&resultado=sucesso");
+	Header("Location:../atualizar.php?mensagem=Operação realizada com sucesso! $quantidade_atualizados órgão(s) atualizado(s)!&resultado=sucesso");
 }else{
 	Header("Location:../atualizar.php?mensagem=Nenhum órgão atualizado!&resultado=falha");
 }

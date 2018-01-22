@@ -34,18 +34,31 @@ if($num_registros == 1){
 	$_SESSION['numLogin']									= $num;
 	$_SESSION['id']										    = $servidor['ID'];
 	$_SESSION['nome']										= $servidor['NM_SERVIDOR'];
-	$_SESSION['sobrenome']									= $servidor['SNM_SERVIDOR'];
 	$_SESSION['CPF']										= $servidor['CPF_SERVIDOR'];
 	$_SESSION['foto']										= $servidor['NM_ARQUIVO_FOTO'];
 	$_SESSION['orgao']										= $servidor['ID_ORGAO'];
+	$orgao 													= $servidor['ID_ORGAO'];						
 	
-	//redireciona o usuário para a página home
-	header("Location:../home.php");
+	//fazendo a query para buscar as datas e ver se o órgão dele está permitido a cadastrar
+	
+	$retornoquery = mysqli_query($conexao_com_banco, "SELECT DT_INICIAL_CADASTRO, DT_FINAL_CADASTRO FROM tb_orgaos WHERE ID='$orgao'");
 
-//se não encontrou nenhum registro...	
+	//a variavel as datas que vieram do banco
+	$datas = mysqli_fetch_row($retornoquery);
+	
+	$data_inicial = $datas[0];
+	
+	$data_final = $datas[1];
+	
+	$data_hoje = Date("Y-m-d");
+	
+	header("Location:../home.php");	
+
+
 }else{
-	//redireciona para a index para login novamente
-	header("Location:../../index.php?err=true");
+	$mensagem = "Usuário ou senha incorretos";
+	
 }
+header("Location:../../index.php?err=$mensagem");
 
 ?>

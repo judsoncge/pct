@@ -77,7 +77,7 @@
 					<!-- Esta variável vem da verificação do login caso as credenciais estejam erradas, para exibir a mensagem de erro para o usuário -->
 					<?php if(isset($_GET['err'])){
 					echo '<div class="row" style="color: red; text-align: center;">'.
-						 'Usuário não encontrado. Você está utilizando a senha correta?'.'</div>';
+						 $_GET['err'].'</div>';
 					}?>
 					
 				</div>
