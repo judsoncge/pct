@@ -35,6 +35,9 @@ $p = retorna_permissao_servidor($_SESSION['id'], "GERENCIAR_PASSAGENS_AEREAS", $
 									<div class="input-group margin-bottom-sm">
 										<span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span> <input type="text" class="input-search form-control" alt="tabela-dados" placeholder="Buscar por órgão, beneficiário" id="search" autofocus="autofocus" />
 									</div>
+									<?php if(!$c){ ?>
+										<div class="alert alert-warning" role="alert" id="mensagem_aviso"><center>O seu órgão não está no período de cadastro/edição. Apenas as visualizações dos módulos estão disponíveis.</center></div>
+									<?php } ?>
 								</div>
 							</div>
 						<?php } ?>

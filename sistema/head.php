@@ -67,7 +67,7 @@
 	        $('#mensagem_erro').fadeOut(4000);//1500 é a duração do efeito (1.5 seg)
 	    	});
 	    $(window).load(function(){
-	        $('#mensagem_aviso').fadeOut(4000);//1500 é a duração do efeito (1.5 seg)
+	        $('#mensagem_aviso').fadeOut(100000);//1500 é a duração do efeito (1.5 seg)
 	    	});
 		});
 	</script>

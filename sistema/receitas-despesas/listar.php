@@ -26,6 +26,10 @@ if(!$o){
 	</div>
 	<?php include('../includes/mensagem.php') ?>
 	
+	<?php if(!$c){ ?>
+		<div class="alert alert-warning" role="alert" id="mensagem_aviso"><center>O seu órgão não está no período de cadastro/edição. Apenas as visualizações dos módulos estão disponíveis.</center></div>
+	<?php } ?>
+	
 	<?php if($o){ ?>
 	<form method="GET" action="listar-por-orgao.php" enctype="multipart/form-data"> 
 		<div class="col-md-10">
