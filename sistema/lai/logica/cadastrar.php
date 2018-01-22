@@ -8,7 +8,7 @@ session_start();
 
 $orgao = $_SESSION["orgao"];
 
-$numero_processo = $_POST["numero_processo"];
+$numero_processo = $_POST["processo"];
 
 $numero_protocolo = $_POST["numero_protocolo"];
 
@@ -22,11 +22,19 @@ $dt_recebimento_solicitacao = $_POST["dt_recebimento_solicitacao"];
 
 $dt_final_expedicao_resposta = $_POST["dt_final_expedicao_resposta"];
 
-$prorrogacao = $_POST["prorrogacao"];
+$prorrogacao = strtoupper($_POST["prorrogacao"]);
 
 $dt_envio_resposta = $_POST["dt_envio_resposta"];
 
 $dt_final_recebimento_recurso = $_POST["dt_final_recebimento_recurso"];
+
+$v_prazo = validar_prazo($dt_abertura_processo, $dt_recebimento_solicitacao, $dt_final_expedicao_resposta, $prorrogacao, $dt_envio_resposta, $dt_final_recebimento_recurso);
+
+if($v_prazo!=""){
+	echo "<script>alert('$v_prazo')</script>";
+	echo "<script>history.back();</script>";
+	die();
+}
 
 $tipo_pessoa = strtoupper($_POST["tipo_pessoa"]);
 

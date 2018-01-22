@@ -37,7 +37,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Data de Abertura do Processo</b>: <?php echo date_format(new DateTime($informacoes["DT_ABERTURA_PROCESSO"]), 'd/m/Y') ?><br>
 							<b>Data de Recebimento da Solicitação</b>: <?php echo date_format(new DateTime($informacoes["DT_RECEBIMENTO_SOLICITACAO"]), 'd/m/Y') ?><br>
 							<b>Data Final para Expedição de Resposta</b>: <?php echo date_format(new DateTime($informacoes["DT_FINAL_EXPEDICAO_RESPOSTA"]), 'd/m/Y') ?><br>
-							<b>Prorrogação</b>: <?php echo date_format(new DateTime($informacoes["DT_PRORROGACAO"]), 'd/m/Y') ?><br>
+							<b>Prorrogação</b>: <?php echo $informacoes["NM_PRORROGACAO"] ?><br>
 							<b>Data de Envio de Resposta</b>: <?php echo date_format(new DateTime($informacoes["DT_ENVIO_RESPOSTA"]), 'd/m/Y') ?><br>
 							<b>Data Final de Recebimento de Recurso</b>: <?php echo date_format(new DateTime($informacoes["DT_FINAL_RECEBIMENTO_RECURSO"]), 'd/m/Y') ?><br>
 							<hr>							
@@ -47,7 +47,7 @@ $informacoes = retorna_informacoes($tabela, $id, $conexao_com_banco);
 							<b>Unidade Federativa</b>: 
 								<?php 
 									$uf = mysqli_fetch_object(retorna_uf($informacoes["ID_UF"], $conexao_com_banco));
-									echo $uf->NM_NOME . " - " . $uf->NM_SIGLA 
+									echo $uf ? ($uf->NM_ESTADO . " - " . $uf->UF_ESTADO) : '';
 								?><br>
 							<b>Situação</b>: <?php echo $informacoes["NM_SITUACAO"]?><br>
 						</div>
