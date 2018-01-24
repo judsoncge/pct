@@ -13,7 +13,7 @@ if($_GET["operacao"]=="info"){
 	if($_GET['CPF'] != $CPF){
 		$existe_servidor = existe_servidor($conexao_com_banco, $CPF);  
 		
-		if($existe_servidor==true){
+		if($existe_servidor){
 			echo "<script>history.back();</script>";
 			echo "<script>alert('Este CPF já está cadastrado. Tente outro')</script>";
 			die();

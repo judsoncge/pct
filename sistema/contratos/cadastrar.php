@@ -79,12 +79,12 @@ include("../includes/verificacao-permissao.php");
 										</select>
 									</div> 
 								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="exampleInputEmail1">Processo Administrativo </label>
-										<input class="form-control" id="processo" name="processo" placeholder="Complete com zeros os espaços vazios" type="text" maxlength="255" minlength="4" required />
-									</div> 
+								<div class="col-md-6">
+								<div class="form-group">
+									<label class="control-label" for="exampleInputEmail1">Assunto</label>
+									<input type='text' readonly class="form-control" id="assunto" name="assunto" value='<?php echo retorna_nome_assunto($_GET['assunto'], $conexao_com_banco)?>'/>
 								</div>
+							</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label" for="exampleInputEmail1">Vinculação</label>

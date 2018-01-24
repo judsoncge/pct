@@ -10,7 +10,7 @@ $CNPJ = $_POST['CNPJ'];
 
 $existe_empresa = existe_empresa($conexao_com_banco, $CNPJ);  
 
-if($existe_empresa==true){ 
+if($existe_empresa){ 
 	echo "<script>history.back();</script>";
 	echo "<script>alert('Este CNPJ já está cadastrado. Tente outro')</script>";
 	die();
